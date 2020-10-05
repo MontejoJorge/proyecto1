@@ -20,7 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f81e0f-3026-401d-95a7-acbc1c8e6404" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/descarga.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logoCompleto.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/logoCompleto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logoSimple.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/logoSimple.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
