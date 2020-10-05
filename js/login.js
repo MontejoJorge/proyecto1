@@ -1,28 +1,34 @@
-localStorage.setItem('nm', "admin");
-localStorage.setItem('pw', "admin")
+var admin = {nm:'admin', pw:'admin'}
 
+var arrayU = [];
 
+arrayU.push(admin);
+
+localStorage.setItem('arrayU',JSON.stringify(arrayU))
 function registro() {
-     var us = {nm:document.getElementById('nm').value, pw:document.getElementById('pw').value};
+    let us = {nm:document.getElementById('nm').value, pw:document.getElementById('pw').value};
 
+    let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
 
-    localStorage.setItem('usu', us);
+    arrayUsuario.push(us);
+    localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
+    let arrayP = JSON.parse(localStorage.getItem('arrayU'));
+    for (x =0 ; x<arrayP.length; x++)
+        alert(arrayP[x].nm)
 
 
 }
 
 function comprobar() {
-
-    var usu = localStorage.getItem('usu');
-    alert(usu.nm + usu.pw)
+    var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
     var nmUsu = document.getElementById('userName').value;
     var pwUsu = document.getElementById('userPw').value;
-
-    if(usu.nm == nmUsu && usu.pw == pwUsu) {
-        alert('Loggin correcto');
+    let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
+    if(u == undefined) {
+        alert('Usuario y/o contraseña incorrecto');
     }else {
-        alert('Usuario y/o contraseña incorrectos');
+        alert('Login correcto');
     }
 }
 
