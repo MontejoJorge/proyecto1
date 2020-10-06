@@ -11,6 +11,7 @@ localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 
 mostrarUsu();
+mostrarEventos();
 //----------------------------------------------------------
 
 function registro() {
@@ -19,13 +20,22 @@ function registro() {
 
     let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
     let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value )
-    if(u == undefined)
+    if(u == undefined){
         arrayUsuario.push(us);
+        alert("El usuario ha sido registrado")
+
+        document.getElementById('nm').value ="";
+        document.getElementById('pw').value ="";
+
+    }
+
     else
         alert("Error, ese usuario ya existe")
 
 
     localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
+    mostrarUsu();
+
 
 
 
@@ -45,17 +55,24 @@ function comprobar() {
 }
 
 function addEvent(){
-    let mensaje ="";
+
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     let ev = {fecha:document.getElementById('dt').value, cita:document.getElementById('ev').value}
-    arrayE.push(ev);
-    arrayE.sort(function(a, b){
-        var fecha1 =new Date(a.fecha), fecha2 = new Date(b.fecha)
-        return fecha1-fecha2 //sort by date ascending
-    });
-    arrayE.forEach(e => mensaje = mensaje + e.fecha +": \n"+ e.cita+"\n" );
-    document.getElementById('ta').value = mensaje;
+
+    let w = arrayE.find(e => e.fecha == document.getElementById('dt').value && e.cita == document.getElementById('ev').value);
+
+    if (w == undefined) {
+        arrayE.push(ev);
+        document.getElementById('ev').value = "";
+        alert("Evento registrado")
+    }else
+        alert('Ese evento ya existe en este dia')
+
+
+
+
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
+    mostrarEventos();
 
 }
 function mostrarUsu(){
@@ -72,6 +89,26 @@ function mostrarUsu(){
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
 }
 
+function mostrarEventos(){
+    let div = document.getElementById('de');
+    let arrayE = JSON.parse(localStorage.getItem('arrayE'));
+    let lista = "";
+
+
+    arrayE.sort(function(a, b){
+        var fecha1 =new Date(a.fecha), fecha2 = new Date(b.fecha)
+        return fecha1-fecha2 //sort by date ascending
+    });
+
+    for (x=0;x<arrayE.length;x++){
+        lista = lista + "<p>"+arrayE[x].fecha+" "+arrayE[x].cita+"</p> <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'><br>"
+    }
+
+    div.innerHTML = lista;
+    localStorage.setItem('arrayE',JSON.stringify(arrayE));
+
+}
+
 function eliminarUsu(id){
 
 
@@ -81,6 +118,14 @@ function eliminarUsu(id){
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
     mostrarUsu();
 
+
+}
+
+function eliminarEve(id){
+    let arrayE = JSON.parse(localStorage.getItem('arrayE'));
+    arrayE.splice(id, 1);
+    localStorage.setItem('arrayE', JSON.stringify(arrayE));
+    mostrarEventos();
 
 }
 
