@@ -1,7 +1,7 @@
 // Zona de creación de objetos de prueba
 var admin = {nm:'admin', pw:'admin'};
 
-var event = {fecha:'2020-10-31', cita:'Jawlelin'}
+var event = {fecha:'2020-10-31', cita:'Jawlelin', dc:'Soy la vane grupo'}
 var arrayU = [];
 var arrayE = [];
 arrayU.push(admin);
@@ -51,13 +51,16 @@ function comprobar() {
         alert('Usuario y/o contraseña incorrecto');
     }else {
         alert('Login correcto');
+        document.getElementById('nm').value ="";
+        document.getElementById('pw').value ="";
+
     }
 }
 
 function addEvent(){
 
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    let ev = {fecha:document.getElementById('dt').value, cita:document.getElementById('ev').value}
+    let ev = {fecha:document.getElementById('dt').value, cita:document.getElementById('ev').value, dc:document.getElementById('dc').value}
 
     let w = arrayE.find(e => e.fecha == document.getElementById('dt').value && e.cita == document.getElementById('ev').value);
 
@@ -101,7 +104,7 @@ function mostrarEventos(){
     });
 
     for (x=0;x<arrayE.length;x++){
-        lista = lista + "<p>"+arrayE[x].fecha+" "+arrayE[x].cita+"</p> <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'><br>"
+        lista = lista + "<p>"+arrayE[x].fecha+" "+arrayE[x].cita+"<br><input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>"+"</p> <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'><br>"
     }
 
     div.innerHTML = lista;
@@ -129,3 +132,8 @@ function eliminarEve(id){
 
 }
 
+function mostrarDescripcion(id){
+    let arrayE = JSON.parse(localStorage.getItem('arrayE'));
+    alert(arrayE[id].dc);
+    localStorage.setItem('arrayE', JSON.stringify(arrayE));
+}

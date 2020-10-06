@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Learning JavaScript</title>
+    <style type="text/css"></style>
 </head>
 <body>
 <form id="formregistro">
@@ -14,12 +15,13 @@
     <!--
     <input id="userName" type="text" />
     <input id="userPw" type="password" />-->
-    <input id="login_btn" type="button" value="Login" onClick="comprobar()"/>
+    <input id="login_btn" class="bubbly-button" type="button" value="Login" onClick="comprobar()"/>
 
 </form>
 <br><br><br>
 <input type="date" id="dt">
-<input type="text" id="ev">
+<input type="text" id="ev" placeholder="Titulo del evento">
+<input type="text" id="dc" placeholder="Descripcion">
 <input type="button" id="dt_btn" value="A&ntilde;adir evento" onclick="addEvent()">
 
 
@@ -31,6 +33,8 @@
 <br><br><br>
 <input type="button" id="me" onclick="mostrarEventos()" value="Mostrar eventos">
 <div id="de"></div>
+
+<a href="mailto:alejandro.perez@ikasle.egibide.org?Subject=Reseteo%20de%20contrase&ntilde;a">Usuario y/o contraseña olvidados</a>
 <script type="text/javascript" src="login.js"></script>
 
 
