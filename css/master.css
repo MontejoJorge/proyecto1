@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 650px) {
   html,
   body {
     margin: 0;
@@ -53,6 +53,76 @@
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     width: 50%;
+  }
+  footer a {
+    font-weight: 100;
+    color: white;
+  }
+  footer {
+    margin-top: auto;
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 650px) and (max-width: 1280px){
+  html,body{
+    margin: 0 auto;
+    height: 100%;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #001024;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2301657a' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin-top: 50px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
+    width: 350px;
+    height: 170px;
+  }
+  input {
+    padding-left: 10px;
+    height: 45px;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  input.field:focus {
+    border-bottom: 4px solid white;
+    border-top: 4px solid white;
+    transition: 0.1s;
+  }
+  input:focus{
+    outline: none;
+    transition: 0.1s;
+  }
+  #login {
+    background-color: white;
+  }
+  #login:active {
+    transform: translateY(2px);
+    background-color: rgb(172, 172, 172);
+  }
+  img {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 50px;
   }
   footer a {
     font-weight: 100;
