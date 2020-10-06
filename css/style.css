@@ -9,8 +9,11 @@
 body {
   font-family: "Roboto";
   background-color: green;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-nav {
+#menu {
   background: red;
   height: 80px;
   width: 100%;
@@ -22,16 +25,16 @@ label.logo {
   color: white;
   font-size: 35px;
 }
-nav ul {
+#menu #menuList {
   float: right;
   margin-right: 20px;
 }
-nav ul li {
+#menu #menuList li {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
 }
-nav ul li a {
+#menu #menuList li a {
   color: white;
   padding: 5px 10px;
   border-radius: 2px;
@@ -56,7 +59,7 @@ a:hover {
 	.checkbtn {
     display: block;
   }
-  ul {
+  #menuList {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -68,15 +71,29 @@ a:hover {
     flex-direction: column;
     transition: all 0.3s;
   }
-  nav ul li {
+  #menu #menuList li {
     display: block;
     padding-top: 60px;
   }
-  nav ul li a {
+  #menu #menuList li a {
     font-size: 1.5em;
   }
-  #check:checked ~ ul {
+  #check:checked ~ #menuList {
     left: 0;
   }
   /*FOOTER*/
+  footer {
+	  background-color: yellow;
+	  width: 100%;
+	  height: 60px;
+	  display: flex;
+	  justify-content: center;
+	  bottom: 0;
+	  margin-top: auto;
+  }
+  footer ul {
+  }
+  footer ul li {
+	  text-align: center;
+  }
 }
