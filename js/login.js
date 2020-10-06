@@ -1,5 +1,5 @@
 // Zona de creación de objetos de prueba
-var admin = {nm:'admin', pw:'admin'}
+var admin = {nm:'admin', pw:'admin'};
 
 var event = {fecha:'2020-10-31', cita:'Jawlelin'}
 var arrayU = [];
@@ -18,8 +18,12 @@ function registro() {
     let us = {nm:document.getElementById('nm').value, pw:document.getElementById('pw').value};
 
     let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
+    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value )
+    if(u == undefined)
+        arrayUsuario.push(us);
+    else
+        alert("Error, ese usuario ya existe")
 
-    arrayUsuario.push(us);
 
     localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
 
@@ -60,13 +64,22 @@ function mostrarUsu(){
     let div =  document.getElementById('du');
     let listadoU = "";
     for(x = 0; x<arrayU.length; x++){
-       listadoU = listadoU +arrayU[x].nm+" "+"<input type='button' value='Eliminar Usuario' onclick='eliminarUsu'>"+"<br>"
+        listadoU = listadoU + "<p>"+arrayU[x].nm+"</p> "+"<input type='button' id='"+x+"' value='Eliminar Usuario' onclick='eliminarUsu(this.id)'>"+"<br>"
+
 }
+
     div.innerHTML = listadoU;
-
+    localStorage.setItem('arrayU', JSON.stringify(arrayU));
 }
 
-function eliminarUsu(){
+function eliminarUsu(id){
+
+
+
+    let arrayU = JSON.parse(localStorage.getItem('arrayU'));
+    arrayU.splice(id, 1);
+    localStorage.setItem('arrayU', JSON.stringify(arrayU));
+    mostrarUsu();
 
 
 }
