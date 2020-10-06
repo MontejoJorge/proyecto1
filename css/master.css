@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 @media (max-width: 650px) {
+=======
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@media (max-width: 768px) {
+>>>>>>> 3db016f84079a596fbc271be1c915ca0f74b1608
   html,
   body {
     margin: 0;
@@ -44,6 +49,9 @@
   }
   #login {
     background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
   }
   #login:active {
     transform: translateY(2px);
@@ -61,6 +69,7 @@
   footer {
     margin-top: auto;
     margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
   }
 }
 @media (min-width: 650px) and (max-width: 1280px){
