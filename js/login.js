@@ -52,11 +52,12 @@ function comprobar() {
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
     if(u == undefined) {
-        alert('Usuario y/o contraseña incorrecto');
+        alert('Usuario y/o contraseña de;a incorrecto');
     }else {
         alert('Login correcto');
         document.getElementById('nm').value ="";
         document.getElementById('pw').value ="";
+        window.location.href
 
     }
 }
@@ -88,7 +89,7 @@ function mostrarUsu(){
     let div =  document.getElementById('du');
     let listadoU = "";
     for(x = 0; x<arrayU.length; x++){
-        listadoU = listadoU + "<p>"+arrayU[x].nm+"</p> "+"<input type='button' id='"+x+"' value='Eliminar Usuario' onclick='eliminarUsu(this.id)'>"+"<br>"
+        listadoU = listadoU + "<div><p>"+arrayU[x].nm+"</p></div> "+"<input type='button' id='"+x+"' value='Eliminar Usuario' onclick='eliminarUsu(this.id)'>"+"<br>"
 
 }
 
@@ -108,7 +109,7 @@ function mostrarEventos(){
     });
 
     for (x=0;x<arrayE.length;x++){
-        lista = lista + "<p>"+arrayE[x].fecha+" "+arrayE[x].cita+"<br><input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>"+"</p> <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'><br>"
+        lista = lista + "<div><p>"+arrayE[x].fecha+" "+arrayE[x].cita+"<br><input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>"+"</p></div> <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'><br>"
     }
 
     div.innerHTML = lista;
