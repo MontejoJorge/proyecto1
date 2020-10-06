@@ -57,8 +57,8 @@ function comprobar() {
         alert('Login correcto');
         document.getElementById('nm').value ="";
         document.getElementById('pw').value ="";
-        window.location.href
-
+        localStorage.setItem('usu', nmUsu);
+        window.location.href = ('html/home.html');
     }
 }
 
