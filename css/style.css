@@ -1,0 +1,134 @@
+*{
+	max-width: 100vw;
+	margin: 0;
+	padding: 0;
+	max-height: 100vh;
+}
+
+
+
+
+#menu{
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+#logo{
+	width: 100px;
+	height: 95px;
+	/*border-radius: 60%;
+	border: 2px solid black;posibilidad*/
+	overflow: hidden;
+	margin: 15px;
+}
+#logo img{
+	width: 100%;
+	height: 100%;
+}
+nav ul{
+	list-style-type: none;
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 125px;
+	background: #000000d9; 
+	width: 100vw;
+	height: 100vh;
+	font-size: 80px;
+
+
+}
+nav ul li{
+	padding-top: 15px;
+	padding-bottom: 10px;
+	text-decoration: none;
+	font-family:'Roboto', sans-serif;
+	color:#007DFF;
+	border-bottom:2px solid #ccc;
+	text-align: center;
+
+	
+}
+nav ul li a{
+	padding-bottom: 10px;
+	text-decoration: none;
+	font-family:'Roboto', sans-serif;
+	color:#007DFF;
+	padding-top: 15px;
+	text-align: center;
+	
+}
+
+button{     
+	background: transparent;    
+	border: none;     
+	width: 70px;     
+	height: 70px;     
+	padding: 0;     
+	margin: 0; 
+}
+button img  {
+    margin-left: 15px;     
+    width: 100%;     
+    height: 100%; 
+}
+button:focus + nav ul {
+    display: block;
+
+}
+#contenido{
+  display: flex;
+  flex-direction: column;
+  background-color: DodgerBlue;
+  justify-content: space-between;
+}
+
+#avisos, #añadir{
+	height: 200px;
+}
+footer{
+	background-color:lightblue;
+	 /*width: 100%;
+    height: 81px;
+    position: absolute;
+    bottom: 0;
+    left: 0; para ponerlo abajo??*/
+}
+a.t1{
+	text-decoration: none;
+	padding-left: 30px;
+	padding-right: 10px;
+	color:black;
+}
+a.t2{
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: lightgrey solid 1px;
+	color:black;
+} 
+a.t1:hover{
+	text-decoration-line: underline;
+
+}
+a.t2:hover{
+	text-decoration-line: underline;
+
+}
+
+
+a.t4:hover{
+	text-decoration-line: underline;
+
+}
+/*
+a.t3{
+	background:url(img/bandera.png) no-repeat top;
+	float:right;
+	height: 17px;
+	width: 100px;
+	border-bottom: 5px;	
+}
+igual los agragamos */
