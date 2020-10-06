@@ -1,48 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<meta name="description" content="Es una página secundaria para registrar empleados y ver avios">
-	<link rel="shortcut icon" type="image/x-icon" href="img/logoSimple.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Es una página secundaria para registrar empleados y ver avios">
+	<link rel="shortcut icon" type="image/x-icon" href="../media/logo.png">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<title>Home</title>
 </head>
 <body>
-<header>
-	<div id="menu">
-		<button><img src="../media/menu.png" id="boton"></button>
-    <nav>
-
-        <ul>
-            <li>INICIO</li>
-            <!-- anadir enlace a la siguiente pag-->
-            <li><a href=>USUARIOS</a></li>
-            <li>CERRAR SESIÓN</li>
-        </ul>
-    </nav>
-   			 <div id="logo">
-				<img src="../media/logoSimple.png" >
-			</div> 
-		</div>
-</header>
-<main>
-<section id="contenido">
-    <div id="avisos">
-	
-        <h1>Avisos</h1>
-    </div>
-    <div id="añadir">
-    	<h1>Añadir aviso</h1>
-	</div>
-</section>
-
-
-</main>
- <footer>
- 	<div>
-		<p class="titulo3">Copyright &copy; 2020 Aeronautic Engines.
-			<a href="" class="t1"> Poitica</a> <a href="" class="t2">Terminos</a> <a href="" class="t2">Servicios</a> <a href="" class="t2">Legal</a> <a href="" class="t2">Mapa</a> <a href="" class="t3"></a>
-
-		</div>
- </footer>
-</header>
+    <header>
+        <nav>
+			<label class="logo">AE</label>
+			<input type="checkbox" id="check">
+			<label for="check" class="checkbtn">
+				<i class="fas fa-bars"></i>
+			</label>
+				<ul>
+					<li><a class="active" href="#">Inicio</a></li>
+					<li><a href="#">Usuarios</a></li>
+					<li><a href="#">Cerrar sesion</a></li>
+				</ul>
+		</nav>
+    </header>
+    <!-- <footer>
+        <div>
+			<ul>
+				<li><a href="#" class="f1">Copyright &copy; 2020</a></li>
+				<li><a href="#" class="f2">Terminos</a></li>
+				<li><a href="#" class="f3">Legal</a></li>
+			</ul>
+        </div>
+    </footer> -->
+</body>
+</html>
