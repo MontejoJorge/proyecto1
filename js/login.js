@@ -10,6 +10,10 @@ localStorage.setItem('arrayU',JSON.stringify(arrayU));
 localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 
+
+
+
+
 mostrarUsu();
 mostrarEventos();
 //----------------------------------------------------------
