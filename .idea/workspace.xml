@@ -66,7 +66,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -78,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601891201830</updated>
       <workItem from="1601891205641" duration="1833000" />
+      <workItem from="1601965853808" duration="5840000" />
     </task>
     <servers />
   </component>
@@ -95,5 +96,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1198" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1601967236273">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1198" y="247" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1601967236273" />
   </component>
 </project>
