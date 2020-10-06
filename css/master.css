@@ -31,22 +31,26 @@
     border-radius: 10px;
     box-sizing: border-box;
     border: none;
-    background-color: rgba(255, 255, 255, 0.7); /*login full blanco*/
+    background-color: rgba(255, 255, 255, 0.7);
   }
   input.field:focus {
     border-bottom: 4px solid white;
     border-top: 4px solid white;
-    transition: 0.2s;
+    transition: 0.1s;
   }
   input:focus{
     outline: none;
-    transition: 0.2s;
+    transition: 0.1s;
   }
   #login {
     background-color: white;
   }
+  #login:active {
+    transform: translateY(2px);
+    background-color: rgb(172, 172, 172);
+  }
   img {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     width: 50%;
   }
