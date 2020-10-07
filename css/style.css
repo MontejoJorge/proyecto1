@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto";
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+#menu {
+  background: red;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+}
+#menu #menuList {
+  float: right;
+  margin-right: 20px;
+}
+#menu #menuList li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+#menu #menuList li a {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+a.active,
+a:hover {
+  background-color: lightgray;
+  transition: 0.2s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 768px) {
+	/*MENU*/
+	.checkbtn {
+    display: block;
+  }
+  #menuList {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: darkblue;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+  #menu #menuList li {
+    display: block;
+    padding-top: 60px;
+  }
+  #menu #menuList li a {
+    font-size: 1.5em;
+  }
+  #check:checked ~ #menuList {
+    left: 0;
+  }
+  /*FOOTER*/
+  footer {
+	  background-color: yellow;
+	  width: 100%;
+	  height: 60px;
+	  display: flex;
+	  justify-content: center;
+	  bottom: 0;
+	  margin-top: auto;
+  }
+  footer ul {
+  }
+  footer ul li {
+	  text-align: center;
+  }
+}

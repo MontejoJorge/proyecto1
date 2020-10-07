@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-@media (max-width: 650px) {  
+@media (max-width: 900px) {
   html,
   body {
     margin: 0;
@@ -9,10 +9,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #001024;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2301657a' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("../media/fondoLogin.jpg");
+    background-size: cover;
   }
-  div {
+  div#imgForm{
     display: flex;
     justify-content: center;
     width: 200px;
@@ -45,16 +45,19 @@
   }
   #login {
     background-color: white;
-    font-size: 1.7em;
     font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
+    box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
   }
   #login:active {
     transform: translateY(2px);
     background-color: rgb(172, 172, 172);
   }
-  img {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 10px;
+  img{
     width: 50%;
   }
   footer a {
@@ -66,69 +69,62 @@
     margin-bottom: 25px;
     font-family: 'Roboto', sans-serif;
   }
+  div#imgLogo{
+    display: none;
+  }
 }
-@media (min-width: 650px) and (max-width: 1280px){
+/*PANTALLA COMPLETA*/
+@media (min-width: 900px){
   html,body{
     margin: 0 auto;
     height: 100%;
   }
-  body {
+  body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #001024;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2301657a' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("../media/fondoLogin.jpg");
+    background-size: cover;
   }
-  div {
+  div#imgForm{
+    display: none;
+  }
+  div#imgLogo{
     display: flex;
     justify-content: center;
-    width: 200px;
-    margin-top: 50px;
+    width: 900px;
+    margin-top: 200px;
   }
-  form {
+  form{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin-top: 30px;
-    width: 350px;
-    height: 170px;
+    flex-direction: column;
+    margin-top: 75px;
   }
-  input {
+  input{
     padding-left: 10px;
-    height: 45px;
-    width: 100%;
+    height: 70px;
+    width: 430px;
     margin: 5px;
     border-radius: 10px;
     box-sizing: border-box;
     border: none;
     background-color: rgba(255, 255, 255, 0.7);
+    font-size: 1.4em;
   }
-  input.field:focus {
-    border-bottom: 4px solid white;
-    border-top: 4px solid white;
-    transition: 0.1s;
+  #login{
+    background: white;
+    margin-top: 40px;
+    font-size: 1.9em;
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
+    box-shadow: 0px 0px 16px 1px rgba(0,125,255,1);
   }
-  input:focus{
-    outline: none;
-    transition: 0.1s;
-  }
-  #login {
-    background-color: white;
-    font-size: 1.2em;
-    font-family: 'Roboto', sans-serif;
-  }
-  #login:active {
-    transform: translateY(2px);
-    background-color: rgb(172, 172, 172);
-  }
-  img {
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 10px;
-    width: 80%;
-    margin-top: 50px;
+  #login:hover{
+    background: #007DFF;
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0,0,0,1);
+    box-shadow: 0px 0px 16px 1px rgba(0,0,0,1);
   }
   footer a {
     font-weight: 100;
@@ -137,5 +133,6 @@
   footer {
     margin-top: auto;
     margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
   }
 }
