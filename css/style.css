@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -6,6 +7,7 @@
   list-style: none;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Roboto";
   background-color: green;
@@ -13,51 +15,87 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+article {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #menu {
   background: red;
   height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
+  flex-direction: row-reverse;
 }
-label.logo {
+
+img.logo {
   color: white;
   font-size: 35px;
+  width: 10%;
+  max-width: 50px;
 }
+
 #menu #menuList {
   float: right;
   margin-right: 20px;
 }
+
 #menu #menuList li {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
 }
+
 #menu #menuList li a {
   color: white;
   padding: 5px 10px;
   border-radius: 2px;
 }
+
 a.active,
 a:hover {
   background-color: lightgray;
   transition: 0.2s;
 }
+
 .checkbtn {
   font-size: 30px;
-  color: white;
+  color: black;
   float: right;
   cursor: pointer;
   display: none;
 }
+
+#uName {
+  font-size: 1.1em;
+}
+
 #check {
   display: none;
 }
+  /*FOOTER*/
+  footer {
+    background-color: yellow;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    margin-top: auto;
+  }
+
 @media (max-width: 768px) {
-	/*MENU*/
-	.checkbtn {
+
+  /*MENU*/
+  .checkbtn {
     display: block;
+  }
+  footer {
+    display: none;
   }
   #menuList {
     position: fixed;
@@ -70,30 +108,74 @@ a:hover {
     display: flex;
     flex-direction: column;
     transition: all 0.3s;
+    z-index: 10;
   }
+
   #menu #menuList li {
     display: block;
     padding-top: 60px;
   }
+  .close {
+    display: none;
+  }
   #menu #menuList li a {
     font-size: 1.5em;
   }
-  #check:checked ~ #menuList {
+
+  #check:checked~#menuList {
     left: 0;
   }
-  /*FOOTER*/
-  footer {
-	  background-color: yellow;
-	  width: 100%;
-	  height: 60px;
-	  display: flex;
-	  justify-content: center;
-	  bottom: 0;
-	  margin-top: auto;
+  #check:checked~.close {
+    display: inline;  
   }
-  footer ul {
+  #check:checked~.open {
+    display: none;  
   }
   footer ul li {
-	  text-align: center;
+    text-align: center;
+  }
+  #eventInfo {
+    background-color: pink;
+    width: 90%;
+    height: 90vw;
+    margin-top: 5%;
+    border-radius: 5px;
+    overflow: scroll;
+  }
+  }
+  #addEvent {
+    background-color: pink;
+    width: 90%;
+    height: 140px;
+    margin-top: 5%;
+    border-radius: 5px;
+  }
+  #eventHistory{
+    background-color: brown;
+    width: 90%;
+    height: 45px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+  }
+  .eventDesc {
+    display: none;
+  }
+  .event{
+    width: 100%;
+    height: 45px;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+  }
+  .eventDate {
+    padding-left: 5%;
+  }
+  .eventName {
+    padding-right: 5%;
   }
 }
