@@ -170,9 +170,9 @@ function mostrarEventos(){
         let w = mostrarDescripcion(x);
 
 
-        forma= forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p></div>"
+        forma= forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
-        // <input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'>
+        //
     }
 
     div.innerHTML = primero + forma;
