@@ -89,6 +89,7 @@
   div#imgForm{
     display: none;
   }
+
   div#imgLogo{
     display: flex;
     justify-content: center;
