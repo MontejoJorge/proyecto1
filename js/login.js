@@ -1,6 +1,6 @@
 // Zona de creación de objetos de prueba
 var admin = {nm:'admin', pw:'admin'};
-
+localStorage.clear('usu');
 var event = {fecha:'2020-10-31', cita:'Jawlelin', dc:'Soy la vane grupo'}
 var arrayU = [];
 var arrayE = [];
@@ -52,7 +52,7 @@ function comprobar() {
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
     if(u == undefined) {
-        alert('Usuario y/o contraseña de;a incorrecto');
+        alert('Usuario y/o contraseña incorrecto');
     }else {
         alert('Login correcto');
         document.getElementById('nm').value ="";
