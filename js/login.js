@@ -117,14 +117,14 @@ function comprobar() {
 function addEvent(){
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    let ev = {fecha:document.getElementById('dt').value, cita:document.getElementById('ev').value, dc:document.getElementById('dc').value}
+    let ev = {fecha:document.getElementById('datePicker').value, cita:document.getElementById('addEventName').value, dc:document.getElementById('addEventDescription').value}
 
-    let w = arrayE.find(e => e.fecha == document.getElementById('dt').value && e.cita == document.getElementById('ev').value);
+    let w = arrayE.find(e => e.fecha == document.getElementById('datePicker').value && e.cita == document.getElementById('addEventName').value);
 
     if (w == undefined) {
         arrayE.push(ev);
-        document.getElementById('ev').value = "";
-        alert("Evento registrado")
+        document.getElementById('addEventName').value = "";
+
     }else
         alert('Ese evento ya existe en este dia')
 
@@ -155,7 +155,9 @@ function mostrarEventos(){
     //y de mostrarlos por pantalla
 
     let div = document.getElementById('eventInfo');
-    let primero= document.getElementById('eventInfo').innerHTML;
+
+    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventName'>Evento</p><p class='eventDesc'>Descripcion</p></div>"
+
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
 
@@ -165,18 +167,20 @@ function mostrarEventos(){
         var fecha1 =new Date(a.fecha), fecha2 = new Date(b.fecha)
         return fecha1-fecha2 //sort by date ascending
     });
+
     let forma = "";
     for (x=0;x<arrayE.length;x++){
 
         let w = mostrarDescripcion(x);
 
 
-        forma= forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
-        //
-    }
 
-    div.innerHTML = primero + forma;
+    }
+    div.innerHTML = "";
+    div.innerHTML =  primero +forma;
+
     //location.reload();
     localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
@@ -198,11 +202,7 @@ function eliminarEve(id){
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     arrayE.splice(id, 1);
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
-<<<<<<< HEAD
-  //  location.reload();
-=======
-    //location.reload();
->>>>>>> addEvent
+    mostrarEventos();
 
 }
 //-------------------------------------------------------------------------------------
