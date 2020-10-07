@@ -108,6 +108,7 @@ function comprobar() {
         document.getElementById('nm').value ="";
         document.getElementById('pw').value ="";
         localStorage.setItem('usu', nmUsu);
+
         window.location.href = ('html/home.html');
     }
 }
@@ -176,7 +177,7 @@ function mostrarEventos(){
     }
 
     div.innerHTML = primero + forma;
-    location.reload();
+    //location.reload();
     localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 }
@@ -197,7 +198,7 @@ function eliminarEve(id){
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     arrayE.splice(id, 1);
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
-    location.reload();
+  //  location.reload();
 
 }
 //-------------------------------------------------------------------------------------
