@@ -1,20 +1,49 @@
 // Zona de creación de objetos de prueba
 // Usuario admin que siempre exista para loggear
 var admin = {nm:'admin', pw:'Jm12345'};
-//Eliminación de variable en local storage para saber si hay algun usuario loggeado
-localStorage.clear('usu');
-var event = {fecha:'2020-10-31', cita:'Jawlelin', dc:'Soy la vane grupo'}
-//Array de eventos y usuarios con su correspondiente push a local storage
-var arrayU = [];
-var arrayE = [];
-arrayU.push(admin);
-arrayE.push(event);
-localStorage.setItem('arrayU',JSON.stringify(arrayU));
-localStorage.setItem('arrayE',JSON.stringify(arrayE));
+
+var arrayU = JSON.parse(localStorage.getItem('arrayU'));
+
+var arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
 
+function crearDatos(){
+
+
+
+    //Eliminación de variable en local storage para saber si hay algun usuario loggeado
+    localStorage.removeItem('usu');
+    //Array de eventos y usuarios con su correspondiente push a local storage
+    console.log(JSON.parse(localStorage.getItem('arrayU')));
+
+
+    console.log(arrayE);
+
+    if(arrayU == null){
+        arrayU = [];
+        arrayU.push(admin);
+        localStorage.setItem('arrayU',JSON.stringify(arrayU));
+        console.log(JSON.parse(localStorage.getItem('arrayU')));
+
+    }
+
+if(arrayE == null)
+{
+      arrayE = []
+    localStorage.setItem('arrayE',JSON.stringify(arrayE));
+    console.log(JSON.parse(localStorage.getItem('arrayE')));
+}
+
+}
+
+
+
+
+
+
+//Esta funcion de aqui sirve para que una vez que estemos en el field de pass
+//al hacer enter se haga click el boton de login
 var tf = document.getElementById('pw');
-alert(tf);
 tf.addEventListener("keyup",function (event){
     if (event.keyCode === 13)
     {
@@ -30,8 +59,8 @@ tf.addEventListener("keyup",function (event){
 
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
-mostrarUsu();
-mostrarEventos();
+//mostrarUsu();
+//mostrarEventos();
 //----------------------------------------------------------
 
 function registro() {
