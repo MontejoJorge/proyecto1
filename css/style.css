@@ -24,7 +24,7 @@ article {
 }
 #menu {
   background: red;
-  height: 80px;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -102,7 +102,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     background-color: darkblue;
-    top: 80px;
+    top: 60px;
     left: -100%;
     text-align: center;
     display: flex;
@@ -138,6 +138,7 @@ a:hover {
     background-color: pink;
     width: 90%;
     height: 90vw;
+    min-height: 135px;
     margin-top: 5%;
     border-radius: 5px;
     overflow: scroll;
@@ -178,22 +179,41 @@ a:hover {
   .eventName {
     padding-right: 5%;
   }
+  /*Añadir eventos*/
   #addEvent {
     background-color: pink;
     width: 90%;
-    height: 140px;
+    min-height: 140px;
     margin-top: 5%;
     border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
   }
-  /*Añadir eventos*/
   #datePicker {
     appearance: none;
     color: #95a5a6;
     font-family: "Helvetica", arial, sans-serif;
-    border:1px solid #ecf0f1;
-    background:#ecf0f1;
-    padding:5px;
-    display: inline-block !important;
-    visibility: visible !important;
+    font-size: 12px;
+    border: 1px solid black; 
+    background:none;
+    padding: 5px;
+    width: 40%;
+    height: 40px;
+    margin: 5% 5% 0 5%;
+  }
+  #addEventName {
+    margin: 5% 5% 0 5%;
+    width: 40%;
+    height: 40px;
+  }
+  #addEventDescription {
+    width: 90%;
+    margin: 5%;
+    height: 15vw;
+  }
+  #addButton {
+    width: 90%;
+    margin: 0 5% 5% 5%;
+    height: 40px;
   }
 }
