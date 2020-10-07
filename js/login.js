@@ -13,6 +13,18 @@ localStorage.setItem('arrayU',JSON.stringify(arrayU));
 localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 
+var tf = document.getElementById('pw');
+alert(tf);
+tf.addEventListener("keyup",function (event){
+    if (event.keyCode === 13)
+    {
+        event.preventDefault();
+        document.getElementById('login').click();
+
+    }
+
+});
+
 
 
 
@@ -157,3 +169,4 @@ function mostrarDescripcion(id){
     alert(arrayE[id].dc);
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
 }
+
