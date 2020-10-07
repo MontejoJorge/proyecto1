@@ -1,7 +1,10 @@
 // Zona de creación de objetos de prueba
-var admin = {nm:'admin', pw:'admin'};
+// Usuario admin que siempre exista para loggear
+var admin = {nm:'admin', pw:'Jm12345'};
+//Eliminación de variable en local storage para saber si hay algun usuario loggeado
 localStorage.clear('usu');
 var event = {fecha:'2020-10-31', cita:'Jawlelin', dc:'Soy la vane grupo'}
+//Array de eventos y usuarios con su correspondiente push a local storage
 var arrayU = [];
 var arrayE = [];
 arrayU.push(admin);
@@ -13,7 +16,8 @@ localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 
 
-
+//LLamada a dos funciones para que cada vez que se carge la página salgan los
+//eventos y los usuarios recargados
 mostrarUsu();
 mostrarEventos();
 //----------------------------------------------------------
@@ -24,6 +28,8 @@ function registro() {
 
     let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
     let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value )
+    //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
+    //registrarlo
     if(u == undefined){
         arrayUsuario.push(us);
         alert("El usuario ha sido registrado")
@@ -38,6 +44,7 @@ function registro() {
 
 
     localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
+    //Actualización del listado de usuarios
     mostrarUsu();
 
 
@@ -46,13 +53,15 @@ function registro() {
 }
 
 function comprobar() {
+    //Este metodo se encaga de comprobar de que el usuario loggeado existe y de
+    // la variable del nombre de usuario para saber que está loggeado
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
     var nmUsu = document.getElementById('nm').value;
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
     if(u == undefined) {
-        alert('Usuario y/o contraseña incorrecto');
+        alert('Usuario y/o contraseña de;a incorrecto');
     }else {
         alert('Login correcto');
         document.getElementById('nm').value ="";
@@ -62,8 +71,9 @@ function comprobar() {
     }
 }
 
-function addEvent(){
 
+function addEvent(){
+    //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     let ev = {fecha:document.getElementById('dt').value, cita:document.getElementById('ev').value, dc:document.getElementById('dc').value}
 
@@ -84,7 +94,8 @@ function addEvent(){
 
 }
 function mostrarUsu(){
-
+    //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
+    //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
     let div =  document.getElementById('du');
     let listadoU = "";
@@ -98,6 +109,8 @@ function mostrarUsu(){
 }
 
 function mostrarEventos(){
+    //Esta funcion se encarga de listar todos los eventos cargados en localstorage
+    //y de mostrarlos por pantalla
     let div = document.getElementById('de');
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     let lista = "";
@@ -116,11 +129,11 @@ function mostrarEventos(){
     localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 }
-
+//Estos dos siguientes elementos se encargan de eliminar usuarios y eventos
+//cada vez que un evento/usuario es añadido se usa su posición en el array para asignarles
+//el id, de esta manera llamando a la funcion pasandole el id podemos eliminar el usuario
+// del array.
 function eliminarUsu(id){
-
-
-
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
     arrayU.splice(id, 1);
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
@@ -136,7 +149,9 @@ function eliminarEve(id){
     mostrarEventos();
 
 }
-
+//-------------------------------------------------------------------------------------
+//Esta funcion se encarga de mostrar en un alert/innerHTML la descripción de cualquier
+//evento, al igual que para borrar se trabaja con el id del evento como posicion de array
 function mostrarDescripcion(id){
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     alert(arrayE[id].dc);
