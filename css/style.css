@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
 	max-width: 100vw;
 	margin: 0;
@@ -72,66 +73,104 @@ button img  {
     height: 100%; 
 }
 button:focus + nav ul {
+=======
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto";
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+#menu {
+  background: red;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+}
+#menu #menuList {
+  float: right;
+  margin-right: 20px;
+}
+#menu #menuList li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+#menu #menuList li a {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+a.active,
+a:hover {
+  background-color: lightgray;
+  transition: 0.2s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 768px) {
+	/*MENU*/
+	.checkbtn {
+>>>>>>> cssLayout
     display: block;
-
-}
-
-
-#avisos , #añadir{
-	width: 100%;
-	height: 100vh;
-	margin:5px;
-	border: 1px solid;
-	border-radius: 15px;
-	background-color: blue;
-
-
-}
-footer{
-	font-size:22px;
-	background-color:lightblue;
-	width: 100vw;
-    height: 60px;
-    position: relative;
-    
+  }
+  #menuList {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: darkblue;
+    top: 80px;
+    left: -100%;
     text-align: center;
-    padding-top: 25px;
-    clear:both;
-    
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+  #menu #menuList li {
+    display: block;
+    padding-top: 60px;
+  }
+  #menu #menuList li a {
+    font-size: 1.5em;
+  }
+  #check:checked ~ #menuList {
+    left: 0;
+  }
+  /*FOOTER*/
+  footer {
+	  background-color: yellow;
+	  width: 100%;
+	  height: 60px;
+	  display: flex;
+	  justify-content: center;
+	  bottom: 0;
+	  margin-top: auto;
+  }
+  footer ul {
+  }
+  footer ul li {
+	  text-align: center;
+  }
 }
-a.t1{
-	text-decoration: none;
-	padding-left: 30px;
-	padding-right: 10px;
-	color:black;
-}
-a.t2{
-	text-decoration: none;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-left: lightgrey solid 1px;
-	color:black;
-} 
-a.t1:hover{
-	text-decoration-line: underline;
-
-}
-a.t2:hover{
-	text-decoration-line: underline;
-
-}
-
-
-a.t4:hover{
-	text-decoration-line: underline;
-
-}
-/*
-a.t3{
-	background:url(img/bandera.png) no-repeat top;
-	float:right;
-	height: 17px;
-	width: 100px;
-	border-bottom: 5px;	
-}
-igual los agragamos */
