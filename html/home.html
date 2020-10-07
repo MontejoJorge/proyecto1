@@ -7,11 +7,9 @@
 	<meta name="description" content="Es una página secundaria para registrar empleados y ver avios">
 	<link rel="shortcut icon" type="image/x-icon" href="../media/logo.png">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<title>Home</title>
 </head>
-
 <body onload="mostrarEventos()">
 	<header>
 		<nav id="menu">
@@ -38,16 +36,11 @@
 				<p class="eventName">Evento</p>
 				<p class="eventDesc">Descripcion</p>
 			</div>
-			<!-- <table id="eventInfo">
-				<tr id="eventHistory">
-					<th>Fecha</th>
-					<th>Evento</th>
-				</tr>
-				<tr>
-					<td>dd/mm/yyy</td>
-					<td>Cumpleaños</td>
-				</tr>
-			</table> -->
+		</div>
+		<div id="addEvent">
+			<input type="date" name="date" id="datePicker">
+			<input type="text" name="name" id="addEventName">
+			<input type="text" name="descripcion" id="addEventDescription">
 		</div>
 	</article>
 	<footer>

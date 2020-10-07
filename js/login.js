@@ -198,7 +198,11 @@ function eliminarEve(id){
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     arrayE.splice(id, 1);
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
+<<<<<<< HEAD
   //  location.reload();
+=======
+    //location.reload();
+>>>>>>> addEvent
 
 }
 //-------------------------------------------------------------------------------------
