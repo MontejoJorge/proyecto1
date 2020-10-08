@@ -145,7 +145,7 @@ function mostrarUsu(){
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('addEvent');
-    divU.innerHTML = "<input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
+    divU.innerHTML = "<p class='title'>A&ntilde; usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
 
 
 
@@ -170,7 +170,7 @@ function mostrarEventos(){
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('addEvent');
-    divE.innerHTML = "<p id='eventTitle'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
+    divE.innerHTML = "<p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
 
 
 
