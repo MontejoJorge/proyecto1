@@ -5,7 +5,7 @@ var admin = {nm:'admin', pw:'Jm12345'};
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
 var arrayE = JSON.parse(localStorage.getItem('arrayE'));
-
+escuchadoresDeEventos();
 
 function crearDatos(){
 
@@ -13,6 +13,7 @@ function crearDatos(){
 
     //Eliminación de variable en local storage para saber si hay algun usuario loggeado
     localStorage.removeItem('usu');
+
     //Array de eventos y usuarios con su correspondiente push a local storage
     console.log(JSON.parse(localStorage.getItem('arrayU')));
 
@@ -43,6 +44,7 @@ if(arrayE == null)
 
 //Esta funcion de aqui sirve para que una vez que estemos en el field de pass
 //al hacer enter se haga click el boton de login
+
 var tf = document.getElementById('pw');
 tf.addEventListener("keyup",function (event){
     if (event.keyCode === 13)
@@ -57,10 +59,27 @@ tf.addEventListener("keyup",function (event){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
-//mostrarUsu();
-//mostrarEventos();
+mostrarUsu();
+mostrarEventos();
 //----------------------------------------------------------
 
 function registro() {
@@ -104,7 +123,6 @@ function comprobar() {
     if(u == undefined) {
         alert('Usuario y/o contraseña de;a incorrecto');
     }else {
-        alert('Login correcto');
         document.getElementById('nm').value ="";
         document.getElementById('pw').value ="";
         localStorage.setItem('usu', nmUsu);
@@ -117,36 +135,46 @@ function comprobar() {
 function addEvent(){
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    let ev = {fecha:document.getElementById('datePicker').value, cita:document.getElementById('addEventName').value, dc:document.getElementById('addEventDescription').value}
+    if(document.getElementById('datePicker').value === ""|| document.getElementById('addEventName').value ===""){
+        alert("No se puede dejar vacio el titulo ni la fecha.")
+    }
+    else {
+        let ev = {
+            fecha: document.getElementById('datePicker').value,
+            cita: document.getElementById('addEventName').value,
+            dc: document.getElementById('addEventDescription').value
+        }
 
-    let w = arrayE.find(e => e.fecha == document.getElementById('datePicker').value && e.cita == document.getElementById('addEventName').value);
+        let w = arrayE.find(e => e.fecha == document.getElementById('datePicker').value && e.cita == document.getElementById('addEventName').value);
 
-    if (w == undefined) {
-        arrayE.push(ev);
-        document.getElementById('addEventName').value = "";
+        if (w == undefined) {
+            arrayE.push(ev);
+            document.getElementById('addEventName').value = "";
+            document.getElementById('addEventDescription').value ="";
 
-    }else
-        alert('Ese evento ya existe en este dia')
+        } else
+            alert('Ese evento ya existe en este dia')
 
 
-
-
-    localStorage.setItem('arrayE', JSON.stringify(arrayE));
-    mostrarEventos();
-
+        localStorage.setItem('arrayE', JSON.stringify(arrayE));
+        mostrarEventos();
+    }
 }
 function mostrarUsu(){
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
+    let div = document.getElementById('eventInfo');
+    let primero = "<div id='eventHistory'><p class='eventDate'>Usuario</p><p class='eventName'>Opciones</p></div>"
+
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
-    let div =  document.getElementById('du');
-    let listadoU = "";
+
+    let forma = "";
     for(x = 0; x<arrayU.length; x++){
-        listadoU = listadoU + "<div><p>"+arrayU[x].nm+"</p></div> "+"<input type='button' id='"+x+"' value='Eliminar Usuario' onclick='eliminarUsu(this.id)'>"+"<br>"
+        forma = forma+"<div class='event'><p class='eventDate'>"+arrayU[x].nm+"</p> <input type='button' id='"+x+"' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
 
 }
 
-    div.innerHTML = listadoU;
+    div.innerHTML = primero + forma;
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
 }
 
@@ -181,7 +209,7 @@ function mostrarEventos(){
     div.innerHTML = "";
     div.innerHTML =  primero +forma;
 
-    //location.reload();
+
     localStorage.setItem('arrayE',JSON.stringify(arrayE));
 
 }
@@ -215,3 +243,27 @@ function mostrarDescripcion(id){
     return desc;
 }
 
+
+
+function escuchadoresDeEventos(){
+    let a = document.getElementById('btnUsu');
+    a.addEventListener("click", function (event){
+            document.getElementById('check').click();
+            let ul = document.getElementById('menuList');
+            ul.innerHTML = "<li id='btnCal'><a href=#>Inicio</a></li><li id='btnUsu'><a class='active' href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
+            escuchadoresDeEventos();
+            mostrarUsu();
+        }
+    );
+    let b = document.getElementById('btnCal');
+
+    b.addEventListener("click", function (event){
+            document.getElementById('check').click();
+            let ul = document.getElementById('menuList');
+            ul.innerHTML = "<li id='btnCal'><a class='active' href=#>Inicio</a></li><li id='btnUsu'><a  href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
+            escuchadoresDeEventos();
+            mostrarEventos();
+        }
+    );
+
+}
