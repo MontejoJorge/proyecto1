@@ -173,9 +173,11 @@ a:hover {
     align-items: center;
     border-bottom: 1px solid lightgray;
   }
+
   .eventDate {
     padding-left: 5%;
   }
+
   .eventName {
     padding-right: 5%;
   }
@@ -200,6 +202,16 @@ a:hover {
     width: 40%;
     height: 40px;
     margin: 5% 5% 0 5%;
+  }
+  #nm, #pw{
+    margin: 5% 5% 0 5%;
+    width: 40%;
+    height: 40px;
+  }
+  #btnAddUsu{
+    width: 90%;
+    margin: 0 5% 5% 5%;
+    height: 40px;
   }
   #addEventName {
     margin: 5% 5% 0 5%;

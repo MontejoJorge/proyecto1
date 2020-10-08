@@ -45,36 +45,17 @@ if(arrayE == null)
 //Esta funcion de aqui sirve para que una vez que estemos en el field de pass
 //al hacer enter se haga click el boton de login
 
+
 var tf = document.getElementById('pw');
 tf.addEventListener("keyup",function (event){
     if (event.keyCode === 13)
     {
         event.preventDefault();
         document.getElementById('login').click();
-
+        escuchadoresDeEventos();
     }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
@@ -163,6 +144,12 @@ function addEvent(){
 function mostrarUsu(){
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
+    let divU = document.getElementById('addEvent');
+    divU.innerHTML = "<input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
+
+
+
+
     let div = document.getElementById('eventInfo');
     let primero = "<div id='eventHistory'><p class='eventDate'>Usuario</p><p class='eventName'>Opciones</p></div>"
 
@@ -181,6 +168,16 @@ function mostrarUsu(){
 function mostrarEventos(){
     //Esta funcion se encarga de listar todos los eventos cargados en localstorage
     //y de mostrarlos por pantalla
+
+    let divE = document.getElementById('addEvent');
+    divE.innerHTML = "<input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
+
+
+
+
+
+
+
 
     let div = document.getElementById('eventInfo');
 
@@ -246,6 +243,7 @@ function mostrarDescripcion(id){
 
 
 function escuchadoresDeEventos(){
+
     let a = document.getElementById('btnUsu');
     a.addEventListener("click", function (event){
             document.getElementById('check').click();
@@ -265,5 +263,7 @@ function escuchadoresDeEventos(){
             mostrarEventos();
         }
     );
+
+
 
 }
