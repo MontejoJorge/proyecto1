@@ -86,7 +86,7 @@ a:hover {
     justify-content: center;
     bottom: 0;
     margin-top: auto;
- 
+    position: fixed;
   }
   footer ul li{
     display: inline-block;
@@ -149,7 +149,7 @@ a:hover {
     min-height: 135px;
     margin-top: 5%;
     border-radius: 5px;
-    overflow: scroll;
+    overflow: auto;
   }
  
   #eventHistory{
@@ -222,26 +222,25 @@ a:hover {
     display: none;
   }
 }
-@media (min-width: 768px){
-
+@media (min-width: 768px) {
   article {
-  flex-direction: row;
-  justify-content: space-around;
-}
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-#eventInfo {
+  #eventInfo {
     background-color: pink;
     width: 90%;
-  height: 80%;
+    height: 60%;
     min-height: 135px;
     margin: 3%;
     border-radius: 5px;
-    overflow: scroll;
-
-
+    overflow: auto;
   }
- 
-  #eventHistory{
+  #menu{
+    position: fixed;
+  }
+  #eventHistory {
     background-color: brown;
     width: 100%;
     height: 45px;
@@ -252,10 +251,12 @@ a:hover {
     position: sticky;
     top: 0;
   }
+
   .eventDesc {
-   padding:3%; 
+    padding: 3%;
   }
-  .event{
+
+  .event {
     width: 100%;
     height: 45px;
     background-color: chartreuse;
@@ -266,17 +267,18 @@ a:hover {
   }
 
   .eventDate {
-    padding-left:2%;
+    padding-left: 2%;
   }
 
   .eventName {
-    padding-right:0px;
+    padding-right: 0px;
   }
+
   /*Añadir eventos*/
   #addEvent {
     background-color: pink;
     width: 90%;
-    height: 80%;
+    height: 60%;
     min-height: 140px;
     margin: 3%;
     border-radius: 5px;
@@ -284,41 +286,60 @@ a:hover {
     flex-wrap: wrap;
 
   }
+
   #datePicker {
     appearance: none;
     color: #95a5a6;
     font-family: "Helvetica", arial, sans-serif;
     font-size: 12px;
-    border: 1px solid black; 
-    background:none;
+    border: 1px solid black;
+    background: none;
     padding: 5px;
     width: 40%;
     height: 40px;
-    margin: 5% 5% 0 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+
   }
-  #nm, #pw{
+
+  #nm, #pw {
     margin: 5% 5% 0 5%;
     width: 40%;
     height: 40px;
   }
-  #btnAddUsu{
+
+  #btnAddUsu {
     width: 90%;
     margin: 0 5% 5% 5%;
     height: 40px;
   }
+
   #addEventName {
-    margin: 5% 5% 0 5%;
     width: 40%;
     height: 40px;
+    margin-left: 10%;
+    margin-top: 5%;
   }
+
   #addEventDescription {
     width: 90%;
     margin: 5%;
     height: 15vw;
   }
+
   #addButton {
     width: 90%;
     margin: 0 5% 5% 5%;
     height: 40px;
   }
 
+  .title{
+    width: 100%;
+    background: #a52a2a;
+    height: 45px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 9px;
+  }
+}

@@ -89,9 +89,6 @@
   div#imgForm{
     display: none;
   }
-  img {
-    width: 50%;
-  }
   div#imgLogo{
     display: flex;
     justify-content: center;
