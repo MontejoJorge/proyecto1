@@ -223,10 +223,6 @@ a:hover {
   }
 }
 @media (min-width: 768px) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 7701f3f032cb8a6b7381b9709d6325b70a826710
   article {
     flex-direction: row;
     justify-content: space-around;
@@ -235,19 +231,6 @@ a:hover {
   #eventInfo {
     background-color: pink;
     width: 90%;
-<<<<<<< HEAD
-    height: 80%;
-    min-height: 135px;
-    margin: 3%;
-    border-radius: 5px;
-    overflow: scroll;
-    margin-top: 1%;
-    margin-bottom: 1%;
-
-
-  }
-
-=======
     height: 60%;
     min-height: 135px;
     margin: 3%;
@@ -257,7 +240,6 @@ a:hover {
   #menu{
     position: fixed;
   }
->>>>>>> 7701f3f032cb8a6b7381b9709d6325b70a826710
   #eventHistory {
     background-color: brown;
     width: 100%;
@@ -302,8 +284,6 @@ a:hover {
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1%;
-    margin-bottom: 1%;
 
   }
 
@@ -352,7 +332,6 @@ a:hover {
     margin: 0 5% 5% 5%;
     height: 40px;
   }
-}
 
   .title{
     width: 100%;
