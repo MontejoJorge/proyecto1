@@ -73,7 +73,7 @@
     display: none;
   }
 }
-/*PANTALLA COMPLETA*/
+/*pc*/
 @media (min-width: 900px){
   html,body{
     margin: 0 auto;
