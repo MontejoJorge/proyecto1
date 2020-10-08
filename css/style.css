@@ -218,6 +218,9 @@ a:hover {
     margin: 0 5% 5% 5%;
     height: 40px;
   }
+  #eventTitle{
+    display: none;
+  }
 }
 @media (min-width: 768px){
 
@@ -229,9 +232,9 @@ a:hover {
 #eventInfo {
     background-color: pink;
     width: 90%;
-    height: 450px;
+  height: 80%;
     min-height: 135px;
-    margin: 5%;
+    margin: 3%;
     border-radius: 5px;
     overflow: scroll;
 
@@ -245,7 +248,7 @@ a:hover {
     border-radius: 5px 5px 0 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: sticky;
     top: 0;
   }
@@ -263,18 +266,19 @@ a:hover {
   }
 
   .eventDate {
+    padding-left:2%;
   }
 
   .eventName {
-    padding-right: 5%;
+    padding-right:0px;
   }
   /*Añadir eventos*/
   #addEvent {
     background-color: pink;
     width: 90%;
-    height: 450px;
+    height: 80%;
     min-height: 140px;
-    margin: 5%;
+    margin: 3%;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -317,5 +321,4 @@ a:hover {
     margin: 0 5% 5% 5%;
     height: 40px;
   }
-}
 
