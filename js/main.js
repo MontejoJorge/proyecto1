@@ -12,8 +12,13 @@ if (localStorage.getItem('usu') == null){
     document.getElementById('uName').innerHTML = "Hi, "+ localStorage.getItem('usu');
 }
 escuchadoresDeEventos();
-function escuchadoresDeEventos(){
 
+
+function escuchadoresDeEventos(){
+    //Esta función se encarga de añadir dos eventListeners los cuales se encargan de
+    //cambiar entre contenido de una misma pagina, asi nos ahorramos tener otro
+    //html innecesario, tras ello lo que hacen es recargar el contenido de la
+    //página.
     let a = document.getElementById('btnUsu');
     a.addEventListener("click", function (event){
             document.getElementById('check').click();

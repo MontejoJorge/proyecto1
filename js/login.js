@@ -67,29 +67,32 @@ mostrarEventos();
 function registro() {
     // Creación de un objeto Usuario con los elementos del HTML
     let us = {nm:document.getElementById('nm').value.toLowerCase(), pw:document.getElementById('pw').value};
+    if(us.nm === ""|| us.pw===""){
+        alert("El usuario/contraseña no puede estar vacio");
+        document.getElementById('nm').value = "";
+        document.getElementById('pw').value = "";
 
-    let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
-    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value.toLowerCase() )
-    //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
-    //registrarlo
-    if(u == undefined){
-        arrayUsuario.push(us);
-        alert("El usuario ha sido registrado")
+    }else {
+        let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
+        let u = arrayUsuario.find(u => u.nm == document.getElementById('nm').value.toLowerCase())
+        //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
+        //registrarlo
+        if (u == undefined) {
+            arrayUsuario.push(us);
+            alert("El usuario ha sido registrado")
 
-        document.getElementById('nm').value ="";
-        document.getElementById('pw').value ="";
+            document.getElementById('nm').value = "";
+            document.getElementById('pw').value = "";
+
+        } else
+            alert("Error, ese usuario ya existe")
+
+
+        localStorage.setItem('arrayU', JSON.stringify(arrayUsuario));
+        //Actualización del listado de usuarios
+        mostrarUsu();
 
     }
-
-    else
-        alert("Error, ese usuario ya existe")
-
-
-    localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
-    //Actualización del listado de usuarios
-    mostrarUsu();
-
-
 
 
 }
@@ -159,7 +162,7 @@ function mostrarUsu(){
 
     let forma = "";
     for(x = 0; x<arrayU.length; x++){
-        forma = forma+"<div class='event'><p class='eventDate'>"+arrayU[x].nm+"</p> <input type='button' id='"+x+"' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
+        forma = forma+"<div class='event'><p class='eventDate'>"+arrayU[x].nm+"</p> <input type='button' id='"+x+"' class='btnEliminarUsu' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
 
 }
 
@@ -201,7 +204,7 @@ function mostrarEventos(){
         let w = mostrarDescripcion(x);
 
 
-        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p><p class='eventUser'>"+arrayE[x].us+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p><p class='eventUser'>"+arrayE[x].us+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' class='btnEliminarEve' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
