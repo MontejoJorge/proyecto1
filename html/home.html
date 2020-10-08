@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<title>Home</title>
+
 </head>
 <body onload="mostrarEventos()">
 	<header>
@@ -20,11 +21,11 @@
 				<i class="fas fa-bars"></i>
 			</label>
 			<label for="check" for="check" class="checkbtn close">
-				<i class="fas fa-times"></i>
+				<i id="cerrar" class="fas fa-times"></i>
 			</label>
 			<ul id="menuList">
-				<li><a class="active" href="#">Inicio</a></li>
-				<li><a href="#">Usuarios</a></li>
+				<li id="btnCal"><a class="active" href="#">Inicio</a></li>
+				<li id="btnUsu"><a href="#" >Usuarios</a></li>
 				<li><a href="../index.html">Cerrar sesion</a></li>
 			</ul>
 		</nav>
@@ -69,7 +70,8 @@
  		</ul>
 	</footer>
 </body>
-<script src="../js/login.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/login.js"></script>
+
 
 </html>

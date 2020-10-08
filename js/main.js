@@ -10,3 +10,7 @@ if (localStorage.getItem('usu') == null){
 
     document.getElementById('uName').innerHTML = "Hi, "+ localStorage.getItem('usu');
 }
+
+
+
+
