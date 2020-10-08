@@ -46,16 +46,6 @@ if(arrayE == null)
 //al hacer enter se haga click el boton de login
 
 
-var tf = document.getElementById('pw');
-tf.addEventListener("keyup",function (event){
-    if (event.keyCode === 13)
-    {
-        event.preventDefault();
-        document.getElementById('login').click();
-        escuchadoresDeEventos();
-    }
-
-});
 
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
@@ -65,10 +55,10 @@ mostrarEventos();
 
 function registro() {
     // Creación de un objeto Usuario con los elementos del HTML
-    let us = {nm:document.getElementById('nm').value, pw:document.getElementById('pw').value};
+    let us = {nm:document.getElementById('nm').value.toLowerCase(), pw:document.getElementById('pw').value};
 
     let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
-    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value )
+    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value.toLowerCase() )
     //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
     //registrarlo
     if(u == undefined){
@@ -98,7 +88,7 @@ function comprobar() {
     // la variable del nombre de usuario para saber que está loggeado
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
-    var nmUsu = document.getElementById('nm').value;
+    var nmUsu = document.getElementById('nm').value.toLowerCase();
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
     if(u == undefined) {
@@ -123,7 +113,8 @@ function addEvent(){
         let ev = {
             fecha: document.getElementById('datePicker').value,
             cita: document.getElementById('addEventName').value,
-            dc: document.getElementById('addEventDescription').value
+            dc: document.getElementById('addEventDescription').value,
+            us: localStorage.getItem('usu')
         }
 
         let w = arrayE.find(e => e.fecha == document.getElementById('datePicker').value && e.cita == document.getElementById('addEventName').value);
@@ -145,7 +136,7 @@ function mostrarUsu(){
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('addEvent');
-    divU.innerHTML = "<p class='title'>A&ntilde; usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
+    divU.innerHTML = "<p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
 
 
 
@@ -181,7 +172,7 @@ function mostrarEventos(){
 
     let div = document.getElementById('eventInfo');
 
-    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventName'>Evento</p><p class='eventDesc'>Descripcion</p></div>"
+    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventUs'>Usuario</p><p class='eventName'>Evento</p><p class='eventOp'>Opciones</p><p class='eventDesc'>Descripcion</p></div>"
 
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
@@ -199,7 +190,7 @@ function mostrarEventos(){
         let w = mostrarDescripcion(x);
 
 
-        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p><p class='eventUser'>"+arrayE[x].us+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
@@ -264,6 +255,17 @@ function escuchadoresDeEventos(){
         }
     );
 
+   // var tf = document.getElementById('pw');
+   // tf.addEventListener("keyup",function (event){
+        //Nuevo metodo no he conseguido que funcione
+      //  if (event.keyCode === 13)
+       // {
+           // event.preventDefault();
+          //  document.getElementById('login').click();
+           // escuchadoresDeEventos();
+      //  }
+
+  //  });
 
 
 }
