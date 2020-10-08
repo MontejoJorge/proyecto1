@@ -5,7 +5,18 @@ var admin = {nm:'admin', pw:'Jm12345'};
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
 var arrayE = JSON.parse(localStorage.getItem('arrayE'));
-escuchadoresDeEventos();
+var tf = document.getElementById('pw');
+tf.addEventListener("keyup",function (event){
+//Nuevo metodo no he conseguido que funcione
+    if (event.keyCode === 13)
+    {
+        event.preventDefault();
+        document.getElementById('login').click();
+        escuchadoresDeEventos();
+    }
+
+});
+
 
 function crearDatos(){
 
@@ -233,39 +244,3 @@ function mostrarDescripcion(id){
 
 
 
-function escuchadoresDeEventos(){
-
-    let a = document.getElementById('btnUsu');
-    a.addEventListener("click", function (event){
-            document.getElementById('check').click();
-            let ul = document.getElementById('menuList');
-            ul.innerHTML = "<li id='btnCal'><a href=#>Inicio</a></li><li id='btnUsu'><a class='active' href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
-            escuchadoresDeEventos();
-            mostrarUsu();
-        }
-    );
-    let b = document.getElementById('btnCal');
-
-    b.addEventListener("click", function (event){
-            document.getElementById('check').click();
-            let ul = document.getElementById('menuList');
-            ul.innerHTML = "<li id='btnCal'><a class='active' href=#>Inicio</a></li><li id='btnUsu'><a  href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
-            escuchadoresDeEventos();
-            mostrarEventos();
-        }
-    );
-
-   // var tf = document.getElementById('pw');
-   // tf.addEventListener("keyup",function (event){
-        //Nuevo metodo no he conseguido que funcione
-      //  if (event.keyCode === 13)
-       // {
-           // event.preventDefault();
-          //  document.getElementById('login').click();
-           // escuchadoresDeEventos();
-      //  }
-
-  //  });
-
-
-}
