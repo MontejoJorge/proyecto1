@@ -170,7 +170,7 @@ function mostrarEventos(){
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('addEvent');
-    divE.innerHTML = "<input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
+    divE.innerHTML = "<p id='eventTitle'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
 
 
 
