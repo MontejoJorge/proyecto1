@@ -46,16 +46,6 @@ if(arrayE == null)
 //al hacer enter se haga click el boton de login
 
 
-var tf = document.getElementById('pw');
-tf.addEventListener("keyup",function (event){
-    if (event.keyCode === 13)
-    {
-        event.preventDefault();
-        document.getElementById('login').click();
-        escuchadoresDeEventos();
-    }
-
-});
 
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
@@ -65,10 +55,10 @@ mostrarEventos();
 
 function registro() {
     // Creación de un objeto Usuario con los elementos del HTML
-    let us = {nm:document.getElementById('nm').value, pw:document.getElementById('pw').value};
+    let us = {nm:document.getElementById('nm').value.toLowerCase(), pw:document.getElementById('pw').value};
 
     let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
-    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value )
+    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value.toLowerCase() )
     //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
     //registrarlo
     if(u == undefined){
@@ -98,7 +88,7 @@ function comprobar() {
     // la variable del nombre de usuario para saber que está loggeado
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
-    var nmUsu = document.getElementById('nm').value;
+    var nmUsu = document.getElementById('nm').value.toLowerCase();
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
     if(u == undefined) {
@@ -264,6 +254,17 @@ function escuchadoresDeEventos(){
         }
     );
 
+   // var tf = document.getElementById('pw');
+   // tf.addEventListener("keyup",function (event){
+        //Nuevo metodo no he conseguido que funcione
+      //  if (event.keyCode === 13)
+       // {
+           // event.preventDefault();
+          //  document.getElementById('login').click();
+           // escuchadoresDeEventos();
+      //  }
+
+  //  });
 
 
 }
