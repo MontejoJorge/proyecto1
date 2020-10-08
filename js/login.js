@@ -1,15 +1,14 @@
 // Zona de creación de objetos de prueba
 // Usuario admin que siempre exista para loggear
-var admin = {nm:'admin', pw:'Jm12345'};
+var admin = {nm: 'admin', pw: 'Jm12345'};
 
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
 var arrayE = JSON.parse(localStorage.getItem('arrayE'));
 var tf = document.getElementById('pw');
-tf.addEventListener("keyup",function (event){
+tf.addEventListener("keyup", function (event) {
 //Nuevo metodo no he conseguido que funcione
-    if (event.keyCode === 13)
-    {
+    if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById('login').click();
         escuchadoresDeEventos();
@@ -18,8 +17,7 @@ tf.addEventListener("keyup",function (event){
 });
 
 
-function crearDatos(){
-
+function crearDatos() {
 
 
     //Eliminación de variable en local storage para saber si hay algun usuario loggeado
@@ -31,65 +29,63 @@ function crearDatos(){
 
     console.log(arrayE);
 
-    if(arrayU == null){
+    if (arrayU == null) {
         arrayU = [];
         arrayU.push(admin);
-        localStorage.setItem('arrayU',JSON.stringify(arrayU));
+        localStorage.setItem('arrayU', JSON.stringify(arrayU));
         console.log(JSON.parse(localStorage.getItem('arrayU')));
 
     }
 
-if(arrayE == null)
-{
-      arrayE = []
-    localStorage.setItem('arrayE',JSON.stringify(arrayE));
-    console.log(JSON.parse(localStorage.getItem('arrayE')));
-}
+    if (arrayE == null) {
+        arrayE = []
+        localStorage.setItem('arrayE', JSON.stringify(arrayE));
+        console.log(JSON.parse(localStorage.getItem('arrayE')));
+    }
 
 }
-
-
-
-
 
 
 //Esta funcion de aqui sirve para que una vez que estemos en el field de pass
 //al hacer enter se haga click el boton de login
 
 
-
 //LLamada a dos funciones para que cada vez que se carge la página salgan los
 //eventos y los usuarios recargados
 mostrarUsu();
 mostrarEventos();
+
 //----------------------------------------------------------
 
 function registro() {
     // Creación de un objeto Usuario con los elementos del HTML
-    let us = {nm:document.getElementById('nm').value.toLowerCase(), pw:document.getElementById('pw').value};
+    let us = {nm: document.getElementById('nm').value.toLowerCase(), pw: document.getElementById('pw').value};
+    if (us.nm === "" || us.pw === "") {
+        alert("El usuario/contraseña no puede estar vacio");
+        document.getElementById('nm').value = "";
+        document.getElementById('pw').value = "";
 
-    let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
-    let u = arrayUsuario.find (u => u.nm == document.getElementById('nm').value.toLowerCase() )
-    //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
-    //registrarlo
-    if(u == undefined){
-        arrayUsuario.push(us);
-        alert("El usuario ha sido registrado")
+    } else {
+        let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
+        let u = arrayUsuario.find(u => u.nm == document.getElementById('nm').value.toLowerCase())
+        //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
+        //registrarlo
+        if (u == undefined) {
+            arrayUsuario.push(us);
+            alert("El usuario ha sido registrado")
 
-        document.getElementById('nm').value ="";
-        document.getElementById('pw').value ="";
+            document.getElementById('nm').value = "";
+            document.getElementById('pw').value = "";
+
+        } else
+            alert("Error, ese usuario ya existe")
+
+
+        localStorage.setItem('arrayU', JSON.stringify(arrayUsuario));
+        //Actualización del listado de usuarios
+        mostrarUsu();
 
     }
-
-    else
-        alert("Error, ese usuario ya existe")
-
-
-    localStorage.setItem('arrayU',JSON.stringify(arrayUsuario));
-    //Actualización del listado de usuarios
-    mostrarUsu();
-
-
 
 
 }
@@ -101,12 +97,12 @@ function comprobar() {
 
     var nmUsu = document.getElementById('nm').value.toLowerCase();
     var pwUsu = document.getElementById('pw').value;
-    let u = arrayU.find (u => u.nm == nmUsu && u.pw == pwUsu)
-    if(u == undefined) {
+    let u = arrayU.find(u => u.nm == nmUsu && u.pw == pwUsu)
+    if (u == undefined) {
         alert('Usuario y/o contraseña de;a incorrecto');
-    }else {
-        document.getElementById('nm').value ="";
-        document.getElementById('pw').value ="";
+    } else {
+        document.getElementById('nm').value = "";
+        document.getElementById('pw').value = "";
         localStorage.setItem('usu', nmUsu);
 
         window.location.href = ('html/home.html');
@@ -114,13 +110,12 @@ function comprobar() {
 }
 
 
-function addEvent(){
+function addEvent() {
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    if(document.getElementById('datePicker').value === ""|| document.getElementById('addEventName').value ===""){
+    if (document.getElementById('datePicker').value === "" || document.getElementById('addEventName').value === "") {
         alert("No se puede dejar vacio el titulo ni la fecha.")
-    }
-    else {
+    } else {
         let ev = {
             fecha: document.getElementById('datePicker').value,
             cita: document.getElementById('addEventName').value,
@@ -133,7 +128,7 @@ function addEvent(){
         if (w == undefined) {
             arrayE.push(ev);
             document.getElementById('addEventName').value = "";
-            document.getElementById('addEventDescription').value ="";
+            document.getElementById('addEventDescription').value = "";
 
         } else
             alert('Ese evento ya existe en este dia')
@@ -143,13 +138,12 @@ function addEvent(){
         mostrarEventos();
     }
 }
-function mostrarUsu(){
+
+function mostrarUsu() {
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('addEvent');
     divU.innerHTML = "<p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
-
-
 
 
     let div = document.getElementById('eventInfo');
@@ -158,27 +152,21 @@ function mostrarUsu(){
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
     let forma = "";
-    for(x = 0; x<arrayU.length; x++){
-        forma = forma+"<div class='event'><p class='eventDate'>"+arrayU[x].nm+"</p> <input type='button' id='"+x+"' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
+    for (x = 0; x < arrayU.length; x++) {
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <input type='button' id='" + x + "' class='btnEliminarUsu' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
 
-}
+    }
 
     div.innerHTML = primero + forma;
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
 }
 
-function mostrarEventos(){
+function mostrarEventos() {
     //Esta funcion se encarga de listar todos los eventos cargados en localstorage
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('addEvent');
     divE.innerHTML = "<p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
-
-
-
-
-
-
 
 
     let div = document.getElementById('eventInfo');
@@ -188,35 +176,34 @@ function mostrarEventos(){
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
 
-
-
-    arrayE.sort(function(a, b){
-        var fecha1 =new Date(a.fecha), fecha2 = new Date(b.fecha)
-        return fecha1-fecha2 //sort by date ascending
+    arrayE.sort(function (a, b) {
+        var fecha1 = new Date(a.fecha), fecha2 = new Date(b.fecha)
+        return fecha1 - fecha2 //sort by date ascending
     });
 
     let forma = "";
-    for (x=0;x<arrayE.length;x++){
+    for (x = 0; x < arrayE.length; x++) {
 
         let w = mostrarDescripcion(x);
 
 
-        forma = forma+"<div class='event'><p class='eventDate'>"+arrayE[x].fecha+"</p><p class='eventUser'>"+arrayE[x].us+"</p> <p class='eventName'>"+arrayE[x].cita+"</p><p class='eventDesc'>"+w+" </p><input type='button' id='"+x+"' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><p class='eventDesc'>" + w + " </p><input type='button' class='btnEliminarEve' id='" + x + "' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
     div.innerHTML = "";
-    div.innerHTML =  primero +forma;
+    div.innerHTML = primero + forma;
 
 
-    localStorage.setItem('arrayE',JSON.stringify(arrayE));
+    localStorage.setItem('arrayE', JSON.stringify(arrayE));
 
 }
+
 //Estos dos siguientes elementos se encargan de eliminar usuarios y eventos
 //cada vez que un evento/usuario es añadido se usa su posición en el array para asignarles
 //el id, de esta manera llamando a la funcion pasandole el id podemos eliminar el usuario
 // del array.
-function eliminarUsu(id){
+function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
     arrayU.splice(id, 1);
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
@@ -225,17 +212,18 @@ function eliminarUsu(id){
 
 }
 
-function eliminarEve(id){
+function eliminarEve(id) {
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     arrayE.splice(id, 1);
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
     mostrarEventos();
 
 }
+
 //-------------------------------------------------------------------------------------
 //Esta funcion se encarga de mostrar en un alert/innerHTML la descripción de cualquier
 //evento, al igual que para borrar se trabaja con el id del evento como posicion de array
-function mostrarDescripcion(id){
+function mostrarDescripcion(id) {
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
     var desc = arrayE[id].dc;
     localStorage.setItem('arrayE', JSON.stringify(arrayE));

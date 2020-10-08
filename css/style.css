@@ -86,7 +86,7 @@ a:hover {
     justify-content: center;
     bottom: 0;
     margin-top: auto;
- 
+    position: fixed;
   }
   footer ul li{
     display: inline-block;
@@ -149,7 +149,7 @@ a:hover {
     min-height: 135px;
     margin-top: 5%;
     border-radius: 5px;
-    overflow: scroll;
+    overflow: auto;
   }
  
   #eventHistory{
@@ -223,7 +223,10 @@ a:hover {
   }
 }
 @media (min-width: 768px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7701f3f032cb8a6b7381b9709d6325b70a826710
   article {
     flex-direction: row;
     justify-content: space-around;
@@ -232,6 +235,7 @@ a:hover {
   #eventInfo {
     background-color: pink;
     width: 90%;
+<<<<<<< HEAD
     height: 80%;
     min-height: 135px;
     margin: 3%;
@@ -243,6 +247,17 @@ a:hover {
 
   }
 
+=======
+    height: 60%;
+    min-height: 135px;
+    margin: 3%;
+    border-radius: 5px;
+    overflow: auto;
+  }
+  #menu{
+    position: fixed;
+  }
+>>>>>>> 7701f3f032cb8a6b7381b9709d6325b70a826710
   #eventHistory {
     background-color: brown;
     width: 100%;
@@ -281,7 +296,7 @@ a:hover {
   #addEvent {
     background-color: pink;
     width: 90%;
-    height: 80%;
+    height: 60%;
     min-height: 140px;
     margin: 3%;
     border-radius: 5px;
@@ -302,7 +317,9 @@ a:hover {
     padding: 5px;
     width: 40%;
     height: 40px;
-    margin: 5% 5% 0 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+
   }
 
   #nm, #pw {
@@ -318,9 +335,10 @@ a:hover {
   }
 
   #addEventName {
-    margin: 5% 5% 0 5%;
     width: 40%;
     height: 40px;
+    margin-left: 10%;
+    margin-top: 5%;
   }
 
   #addEventDescription {
@@ -336,3 +354,13 @@ a:hover {
   }
 }
 
+  .title{
+    width: 100%;
+    background: #a52a2a;
+    height: 45px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 9px;
+  }
+}
