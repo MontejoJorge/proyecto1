@@ -10,11 +10,11 @@
 
 body {
   font-family: "Roboto";
-  background-color: green;
+  background-color: #AAD4FF;
   display: flex;
   flex-direction: column;
-  
 }
+
 article {
   width: 100%;
   height: 100vh;
@@ -22,8 +22,9 @@ article {
   flex-direction: column;
   align-items: center;
 }
+
 #menu {
-  background: red;
+  background: #304D6D;
   height: 60px;
   width: 100%;
   display: flex;
@@ -33,7 +34,6 @@ article {
 }
 
 img.logo {
-  color: white;
   font-size: 35px;
   width: 10%;
   max-width: 50px;
@@ -47,7 +47,6 @@ img.logo {
 #menu #menuList li {
   display: inline-block;
   line-height: 80px;
-  margin: 0 5px;
 }
 
 #menu #menuList li a {
@@ -61,10 +60,13 @@ a:hover {
   background-color: lightgray;
   transition: 0.2s;
 }
+li.active {
+  background-color: #304D6D;
+}
 
 .checkbtn {
   font-size: 30px;
-  color: black;
+  color: white;
   float: right;
   cursor: pointer;
   display: none;
@@ -72,57 +74,89 @@ a:hover {
 
 #uName {
   font-size: 1.1em;
+  color: white;
 }
 
 #check {
   display: none;
 }
-.btnEliminarEve{
+
+.btnEliminarEve {
   margin-right: 4%;
 }
-  /*FOOTER*/
-  footer  {
-    background-color: yellow;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-    margin-top: auto;
-    position: fixed;
-  }
-  footer ul li{
-    display: inline-block;
-    padding-top: 17px;
-  }
-  .title{
-    width: 100%;
-    background: #a52a2a;
-    height: 45px;
-    border-radius: 5px 5px 0 0;
-    text-align: center;
-    font-size: 1.3em;
-    padding: 9px;
-  }
-  textarea{
-    resize: none;
-  }
 
+/*FOOTER*/
+footer {
+  background-color: yellow;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  margin-top: auto;
+  position: fixed;
+}
 
+footer ul li {
+  display: inline-block;
+  padding-top: 17px;
+}
+
+.title {
+  background-color: #3497FF;
+  width: 100%;
+  height: 45px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 9px;
+}
+
+textarea {
+  resize: none;
+}
+
+#menuList {
+  background-color: #3497FF;
+}
+
+#eventInfo {
+  border: 1px solid black;
+  background-color: #D3E8FF;
+}
+
+#eventHistory {
+  background-color: #4EA5FF;
+}
+
+.event {
+  background-color: #90C6FF;
+  border-bottom: 1px solid gray;
+}
+
+#addEvent {
+  background-color: #D3E8FF;
+  border: 1px solid black;
+}
 
 @media (max-width: 768px) {
+  article {
+    height: 80vh;
+  }
+
   /*MENU*/
   .checkbtn {
     display: block;
   }
+
   footer {
     display: none;
   }
+
   #menuList {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: darkblue;
     top: 60px;
     left: -100%;
     text-align: center;
@@ -133,12 +167,16 @@ a:hover {
   }
 
   #menu #menuList li {
-    display: block;
-    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
   }
+
   .close {
     display: none;
   }
+
   #menu #menuList li a {
     font-size: 1.5em;
   }
@@ -146,17 +184,20 @@ a:hover {
   #check:checked~#menuList {
     left: 0;
   }
+
   #check:checked~.close {
-    display: inline;  
+    display: inline;
   }
+
   #check:checked~.open {
-    display: none;  
+    display: none;
   }
+
   footer ul li {
     text-align: center;
   }
+
   #eventInfo {
-    background-color: pink;
     width: 90%;
     height: 80vw;
     min-height: 135px;
@@ -164,42 +205,45 @@ a:hover {
     border-radius: 5px;
     overflow: auto;
   }
- 
-  #eventHistory{
-    background-color: brown;
+
+  #eventHistory {
     width: 100%;
     height: 45px;
     border-radius: 5px 5px 0 0;
     display: flex;
+    border-bottom: 1px solid gray;
     align-items: center;
     justify-content: space-around;
     position: sticky;
     top: 0;
   }
+
   .eventDesc {
     display: none;
   }
-  .event{
+
+  .event {
     width: 100%;
     height: 45px;
-    background-color: chartreuse;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid lightgray;
   }
+
   .eventDate {
     padding-left: 5%;
   }
+
   .eventName {
     padding-right: 5%;
   }
+
   .fas.fa-eye {
     display: none;
   }
+
   /*Añadir eventos*/
   #addEvent {
-    background-color: pink;
     width: 90%;
     min-height: 140px;
     margin-top: 5%;
@@ -207,54 +251,67 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
   }
+
   #datePicker {
     appearance: none;
     color: #95a5a6;
     font-family: "Helvetica", arial, sans-serif;
     font-size: 12px;
-    border: 1px solid black; 
-    background:none;
+    border: 1px solid black;
+    background: none;
     padding: 5px;
     width: 40%;
     height: 40px;
     margin: 5% 5% 0 5%;
   }
+
   #addEventName {
     margin: 5% 5% 0 5%;
     width: 40%;
     height: 40px;
   }
+
   #addEventDescription {
     width: 90%;
     margin: 5%;
     height: 15vw;
   }
-  #addButton,#btnAddUsu {
+
+  #addButton,
+  #btnAddUsu {
     width: 90%;
     margin: 0 5% 5% 5%;
     height: 40px;
   }
-  #eventTitle{
+
+  #eventTitle {
     display: none;
   }
-  #eventDescription{
+
+  #eventDescription {
     display: none;
   }
-  .eventUs, .eventUser{
+
+  .eventUs,
+  .eventUser {
     display: none;
   }
-  #eventColumn{
+
+  #eventColumn {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  #nm,#pw {
+
+  #nm,
+  #pw {
     width: 40%;
     height: 40px;
     margin: 5%;
   }
 }
+
 @media (min-width: 768px) {
   article {
     flex-direction: row;
@@ -271,9 +328,11 @@ a:hover {
     overflow: auto;
     width: 50%;
   }
-  #menu{
+
+  #menu {
     position: fixed;
   }
+
   #eventHistory {
     background-color: brown;
     width: 100%;
@@ -335,7 +394,8 @@ a:hover {
 
   }
 
-  #nm, #pw {
+  #nm,
+  #pw {
     margin: 5%;
     width: 40%;
     height: 40px;
@@ -369,19 +429,21 @@ a:hover {
     padding-bottom: 10px;
   }
 
-  #eventColumn{
+  #eventColumn {
     display: flex;
     flex-direction: column;
     width: 50%;
     align-items: center;
     height: 72vh;
   }
-  #eventDescription{
+
+  #eventDescription {
     width: 90%;
     background-color: pink;
     border-radius: 5px 5px 5px 5px;
   }
-  #textDescription{
+
+  #textDescription {
     width: 90%;
     margin-top: 4%;
     margin-bottom: 4%;

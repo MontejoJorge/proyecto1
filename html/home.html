@@ -30,6 +30,7 @@
 		</nav>
 	</header>
 	<article>
+		
 		<div id="eventInfo">
 			<!--
 			 <div id="eventHistory">
@@ -38,6 +39,7 @@
 				<p class="eventDesc">Descripcion</p>
 			</div>-->
 		</div>
+		<form action="#" method="post">
 		<div id="eventColumn">
 			<div id="addEvent">
 				<input type="date" name="date" id="datePicker">
@@ -45,6 +47,7 @@
 				<textarea name="descripcion" id="addEventDescription" placeholder="Añade una descripcion al evento"></textarea>
 				<input type="button" value="Añadir" id="addButton" onclick="addEvent()">
 			</div>
+		</form>
 			<div id="eventDescription">
 				<textarea name="eventDescription" id="textDescription" readonly></textarea>
 			</div>
@@ -60,6 +63,4 @@
 </body>
 <script src="../js/main.js"></script>
 <script src="../js/login.js"></script>
-
-
 </html>
