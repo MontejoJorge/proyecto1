@@ -51,17 +51,10 @@ img.logo {
 
 #menu #menuList li a {
   color: white;
-  padding: 5px 10px;
   border-radius: 2px;
 }
-
-a.active,
-a:hover {
-  background-color: lightgray;
-  transition: 0.2s;
-}
 li.active {
-  background-color: #304D6D;
+  background-color: #6AB3FF;
 }
 
 .checkbtn {
@@ -87,7 +80,7 @@ li.active {
 
 /*FOOTER*/
 footer {
-  background-color: yellow;
+  background-color: #304D6D;
   width: 100%;
   height: 50px;
   display: flex;
