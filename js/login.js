@@ -66,20 +66,37 @@ function registro() {
         document.getElementById('pw').value = "";
 
     } else {
-        let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
-        let u = arrayUsuario.find(u => u.nm == document.getElementById('nm').value.toLowerCase())
-        //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
-        //registrarlo
-        if (u == undefined) {
-            arrayUsuario.push(us);
-            alert("El usuario ha sido registrado")
+        let cadena = /^[A-Z]+$/i;
+        let contraRG = /^[A-Za-z0-9\s]+$/g;
 
+        if(document.getElementById('nm').value.match(cadena)) {
+            if (document.getElementById('pw').value.match(contraRG)){
+            let arrayUsuario = JSON.parse(localStorage.getItem('arrayU'));
+            let u = arrayUsuario.find(u => u.nm == document.getElementById('nm').value.toLowerCase())
+            //Comprobación de que la busqueda no haya encontrado ya a ese usuario y permita
+            //registrarlo
+            if (u == undefined) {
+                arrayUsuario.push(us);
+                alert("El usuario ha sido registrado")
+                localStorage.setItem('arrayU', JSON.stringify(arrayUsuario));
+
+                document.getElementById('nm').value = "";
+                document.getElementById('pw').value = "";
+                mostrarUsu()
+
+            } else
+                alert("Error, ese usuario ya existe")
+        }
+            else {
+                alert('La contraseña solo puede contener numeros o letras');
+                document.getElementById('nm').value = "";
+                document.getElementById('pw').value = "";
+            }
+        }else{
+            alert('El usuario solo puede contener letras');
             document.getElementById('nm').value = "";
             document.getElementById('pw').value = "";
-
-        } else
-            alert("Error, ese usuario ya existe")
-
+        }
 
         localStorage.setItem('arrayU', JSON.stringify(arrayUsuario));
         //Actualización del listado de usuarios
@@ -159,6 +176,10 @@ function mostrarUsu() {
 
     div.innerHTML = primero + forma;
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
+
+
+
+
 }
 
 function mostrarEventos() {
@@ -205,6 +226,13 @@ function mostrarEventos() {
 // del array.
 function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
+    if(arrayU[id].nm === localStorage.getItem('usu').value){
+        localStorage.removeItem('usu')
+        arrayU.splice(id, 1);
+        localStorage.setItem('arrayU', JSON.stringify(arrayU));
+        alert("El usuario con el que estabas loggeado ha sido eliminado")
+        userLog();
+    }
     arrayU.splice(id, 1);
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
     mostrarUsu();
