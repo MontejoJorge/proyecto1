@@ -132,8 +132,7 @@ function comprobar() {
 function addEvent() {
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    let dif = new Date();
-
+    let dif = document.getElementById('datePicker').value.compare
 
     if (document.getElementById('datePicker').value === "" || document.getElementById('addEventName').value === "") {
         alert("No se puede dejar vacio el titulo ni la fecha.")
@@ -142,8 +141,7 @@ function addEvent() {
             fecha: document.getElementById('datePicker').value,
             cita: document.getElementById('addEventName').value,
             dc: document.getElementById('addEventDescription').value,
-            us: localStorage.getItem('usu'),
-            d1: dif.getDate()
+            us: localStorage.getItem('usu')
         }
 
         let w = arrayE.find(e => e.fecha == document.getElementById('datePicker').value && e.cita == document.getElementById('addEventName').value);
@@ -208,14 +206,14 @@ function mostrarEventos() {
         var fecha1 = new Date(a.fecha), fecha2 = new Date(b.fecha)
         return fecha1 - fecha2 //sort by date ascending
     });
-    let now = new Date();
+
     let forma = "";
     for (x = 0; x < arrayE.length; x++) {
 
 
-        let diferencia = Math.round((arrayE[x].d1() - now)/(1000*60*60*24));
 
-        forma = forma + "<div class='event'><p class='eventDate'>" +  diferencia + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-times' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
+
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-times' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
