@@ -226,8 +226,10 @@ function mostrarEventos() {
 // del array.
 function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
+    alert(arrayU[id].nm);
+    alert(localStorage.getItem('usu').value);
     if(arrayU[id].nm === localStorage.getItem('usu').value){
-        localStorage.removeItem('usu')
+        localStorage.removeItem('usu');
         arrayU.splice(id, 1);
         localStorage.setItem('arrayU', JSON.stringify(arrayU));
         alert("El usuario con el que estabas loggeado ha sido eliminado")
