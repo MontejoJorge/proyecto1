@@ -5,20 +5,22 @@ var admin = {nm: 'admin', pw: 'Jm12345'};
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
 var arrayE = JSON.parse(localStorage.getItem('arrayE'));
-var tf = document.getElementById('pw');
-tf.addEventListener("keyup", function (event) {
-//Nuevo metodo no he conseguido que funcione
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById('login').click();
-        escuchadoresDeEventos();
-    }
 
-});
+
 
 
 function crearDatos() {
 
+    let tf = document.getElementById('pw');
+    tf.addEventListener("keyup", function (event) {
+//Nuevo metodo no he conseguido que funcione
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('login').click();
+            escuchadoresDeEventos();
+        }
+
+    });
 
     //Eliminación de variable en local storage para saber si hay algun usuario loggeado
     localStorage.removeItem('usu');
@@ -160,7 +162,7 @@ function mostrarUsu() {
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('addEvent');
-    let divE = document.getElementById('eventDescription').remove();
+
     divU.innerHTML = "<p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
 
 
@@ -227,9 +229,8 @@ function mostrarEventos() {
 // del array.
 function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
-    alert(arrayU[id].nm);
-    alert(localStorage.getItem('usu').value);
-    if(arrayU[id].nm === localStorage.getItem('usu').value){
+
+    if(arrayU[id].nm === localStorage.getItem('usu')){
         localStorage.removeItem('usu');
         arrayU.splice(id, 1);
         localStorage.setItem('arrayU', JSON.stringify(arrayU));
