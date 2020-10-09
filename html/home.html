@@ -40,11 +40,16 @@
 			</div>-->
 
 		</div>
-		<div id="addEvent">
-			<input type="date" name="date" id="datePicker">
-			<input type="text" name="eventName" id="addEventName" placeholder="Evento">
-			<input type="text" name="descripcion" id="addEventDescription">
-			<input type="button" value="Añadir" id="addButton" onclick="addEvent()">
+		<div id="eventColumn">
+			<div id="addEvent">
+				<input type="date" name="date" id="datePicker">
+				<input type="text" name="eventName" id="addEventName" placeholder="Evento">
+				<textarea name="descripcion" id="addEventDescription" placeholder="Añade una descripcion al evento"></textarea>
+				<input type="button" value="Añadir" id="addButton" onclick="addEvent()">
+			</div>
+			<div id="eventDescription">
+				<textarea name="eventDescription" id="textDescription" readonly></textarea>
+			</div>
 		</div>
 	</article>
 	<footer>
