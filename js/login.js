@@ -213,7 +213,7 @@ function mostrarEventos() {
 
 
 
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-trash-alt' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-times' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-trash-alt' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
