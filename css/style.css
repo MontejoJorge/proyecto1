@@ -104,6 +104,9 @@ a:hover {
     font-size: 1.3em;
     padding: 9px;
   }
+  textarea{
+    resize: none;
+  }
 
 
 
