@@ -111,7 +111,6 @@ a:hover {
 
 
 @media (max-width: 768px) {
-
   /*MENU*/
   .checkbtn {
     display: block;
@@ -195,6 +194,9 @@ a:hover {
   .eventName {
     padding-right: 5%;
   }
+  .fas.fa-eye {
+    display: none;
+  }
   /*Añadir eventos*/
   #addEvent {
     background-color: pink;
@@ -227,7 +229,7 @@ a:hover {
     margin: 5%;
     height: 15vw;
   }
-  #addButton {
+  #addButton,#btnAddUsu {
     width: 90%;
     margin: 0 5% 5% 5%;
     height: 40px;
@@ -246,6 +248,11 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  #nm,#pw {
+    width: 40%;
+    height: 40px;
+    margin: 5%;
   }
 }
 @media (min-width: 768px) {
