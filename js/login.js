@@ -5,20 +5,22 @@ var admin = {nm: 'admin', pw: 'Jm12345'};
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
 var arrayE = JSON.parse(localStorage.getItem('arrayE'));
-var tf = document.getElementById('pw');
-tf.addEventListener("keyup", function (event) {
-//Nuevo metodo no he conseguido que funcione
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById('login').click();
-        escuchadoresDeEventos();
-    }
 
-});
+
 
 
 function crearDatos() {
 
+    let tf = document.getElementById('pw');
+    tf.addEventListener("keyup", function (event) {
+//Nuevo metodo no he conseguido que funcione
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('login').click();
+            escuchadoresDeEventos();
+        }
+
+    });
 
     //Eliminación de variable en local storage para saber si hay algun usuario loggeado
     localStorage.removeItem('usu');
@@ -160,7 +162,7 @@ function mostrarUsu() {
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('addEvent');
-    let divE = document.getElementById('eventDescription').remove();
+
     divU.innerHTML = "<p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
 
 
@@ -171,7 +173,7 @@ function mostrarUsu() {
 
     let forma = "";
     for (x = 0; x < arrayU.length; x++) {
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <input type='button' id='" + x + "' class='btnEliminarUsu' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-times' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
 
     }
 
@@ -209,7 +211,7 @@ function mostrarEventos() {
 
 
 
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><input type='button' class='btnEliminarEve' id='" + x + "' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-times' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
@@ -227,9 +229,8 @@ function mostrarEventos() {
 // del array.
 function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
-    alert(arrayU[id].nm);
-    alert(localStorage.getItem('usu').value);
-    if(arrayU[id].nm === localStorage.getItem('usu').value){
+
+    if(arrayU[id].nm === localStorage.getItem('usu')){
         localStorage.removeItem('usu');
         arrayU.splice(id, 1);
         localStorage.setItem('arrayU', JSON.stringify(arrayU));

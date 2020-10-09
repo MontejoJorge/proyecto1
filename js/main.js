@@ -28,6 +28,7 @@ function escuchadoresDeEventos(){
             document.getElementById('check').click();
             let ul = document.getElementById('menuList');
             ul.innerHTML = "<li id='btnCal'><a href=#>Inicio</a></li><li id='btnUsu'><a class='active' href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
+            document.getElementById('eventDescription').innerHTML = "";
             escuchadoresDeEventos();
             mostrarUsu();
         }
