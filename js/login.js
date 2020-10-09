@@ -187,12 +187,12 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('addEvent');
-    divE.innerHTML = "<p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <input type='text' name='descripcion' id='addEventDescription'><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
+    divE.innerHTML = "<p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Introduce aqui la descripci&otilde;n del evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
 
 
     let div = document.getElementById('eventInfo');
 
-    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventUs'>Usuario</p><p class='eventName'>Evento</p><p class='eventOp'>Opciones</p><p class='eventDesc'>Descripcion</p></div>"
+    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventUs'>Usuario</p><p class='eventName'>Evento</p><p class='eventDesc'>Descripcion</p><p class='eventOp'>Opciones</p></div>"
 
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
