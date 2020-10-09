@@ -186,8 +186,8 @@ function mostrarEventos() {
     //Esta funcion se encarga de listar todos los eventos cargados en localstorage
     //y de mostrarlos por pantalla
 
-    let divE = document.getElementById('addEvent');
-    divE.innerHTML = "<p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Introduce aqui la descripci&otilde;n del evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'>"
+    let divE = document.getElementById('eventColumn');
+    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly></textarea></div>"
 
 
     let div = document.getElementById('eventInfo');
@@ -205,10 +205,10 @@ function mostrarEventos() {
     let forma = "";
     for (x = 0; x < arrayE.length; x++) {
 
-        let w = mostrarDescripcion(x);
 
 
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><p class='eventDesc'>" + w + " </p><input type='button' class='btnEliminarEve' id='" + x + "' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><input type='button' class='btnEliminarEve' id='" + x + "' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
@@ -253,9 +253,10 @@ function eliminarEve(id) {
 //evento, al igual que para borrar se trabaja con el id del evento como posicion de array
 function mostrarDescripcion(id) {
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    var desc = arrayE[id].dc;
+    let desc =arrayE[id].dc;
     localStorage.setItem('arrayE', JSON.stringify(arrayE));
-    return desc;
+    let e = document.getElementById('textDescription');
+    e.innerHTML = desc;
 }
 
 
