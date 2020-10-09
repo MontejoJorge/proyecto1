@@ -118,7 +118,7 @@ function comprobar() {
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find(u => u.nm == nmUsu && u.pw == pwUsu)
     if (u == undefined) {
-        alert('Usuario y/o contraseña de;a incorrecto');
+        alert('Usuario y/o contraseña incorrecto');
     } else {
         document.getElementById('nm').value = "";
         document.getElementById('pw').value = "";
@@ -132,6 +132,8 @@ function comprobar() {
 function addEvent() {
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
+    let dif = document.getElementById('datePicker').value.compare
+
     if (document.getElementById('datePicker').value === "" || document.getElementById('addEventName').value === "") {
         alert("No se puede dejar vacio el titulo ni la fecha.")
     } else {
@@ -173,7 +175,7 @@ function mostrarUsu() {
 
     let forma = "";
     for (x = 0; x < arrayU.length; x++) {
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <input type='button' id='" + x + "' class='btnEliminarUsu' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-times' value='Eliminar usuario' onclick='eliminarUsu(this.id)'></div>"
 
     }
 
@@ -211,7 +213,7 @@ function mostrarEventos() {
 
 
 
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><input type='button' class='btnEliminarEve' id='" + x + "' value='Eliminar cita' onclick='eliminarEve(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='eventDate'>" + arrayE[x].fecha + "</p><p class='eventUser'>" + arrayE[x].us + "</p> <p class='eventName'>" + arrayE[x].cita + "</p><button class='fas fa-eye' id='"+x+"' onclick='mostrarDescripcion(this.id)'></button><button  class='fas fa-times' id='" + x + "'  onclick='eliminarEve(this.id)'></div>"
         //<input type='button' value='Mostrar descripcion del evento' id='"+x+"' onclick='mostrarDescripcion(this.id)'>
 
     }
