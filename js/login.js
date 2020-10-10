@@ -117,7 +117,7 @@ function comprobar() {
     var nmUsu = document.getElementById('nm').value.toLowerCase();
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find(u => u.nm == nmUsu && u.pw == pwUsu)
-    if (u == undefined) {
+    if (u === undefined) {
         alert('Usuario y/o contraseña incorrecto');
     } else {
         document.getElementById('nm').value = "";
@@ -168,13 +168,13 @@ function mostrarUsu() {
 
 
     let div = document.getElementById('eventInfo');
-    let primero = "<div id='eventHistory'><p class='eventDate'>Usuario</p><p class='eventName'>Opciones</p></div>"
+    let primero = "<div id='eventHistory'><p class='userName'>Usuario</p><p class='userOp'>Opciones</p></div>"
 
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
     let forma = "";
     for (x = 0; x < arrayU.length; x++) {
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-trash-alt'  onclick='eliminarUsu(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='userName'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-trash-alt'  onclick='eliminarUsu(this.id)'></div>"
 
     }
 
@@ -191,7 +191,6 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('boxForm');
-    let diaHoy = new Date();
     divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly></textarea></div>"
 
 
