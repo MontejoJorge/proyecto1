@@ -132,7 +132,6 @@ function comprobar() {
 function addEvent() {
     //Función que se encarga de añadir eventos y comprobar que no existan
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
-    let dif = document.getElementById('datePicker').value.compare
 
     if (document.getElementById('datePicker').value === "" || document.getElementById('addEventName').value === "") {
         alert("No se puede dejar vacio el titulo ni la fecha.")
@@ -163,9 +162,9 @@ function addEvent() {
 function mostrarUsu() {
     //Este metodo se encarga de coger todos los usuarios que esten cargados en esa
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
-    let divU = document.getElementById('addEvent');
+    let divU = document.getElementById('boxForm');
 
-    divU.innerHTML = "<p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'>"
+    divU.innerHTML = "<div id='addUser'> <p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'></div>"
 
 
     let div = document.getElementById('eventInfo');
@@ -191,7 +190,8 @@ function mostrarEventos() {
     //Esta funcion se encarga de listar todos los eventos cargados en localstorage
     //y de mostrarlos por pantalla
 
-    let divE = document.getElementById('eventColumn');
+    let divE = document.getElementById('boxForm');
+    let diaHoy = new Date();
     divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly></textarea></div>"
 
 
