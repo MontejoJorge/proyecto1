@@ -15,6 +15,8 @@ if (localStorage.getItem('usu') == null){
 
 }
 }
+let ul = document.getElementById('menuList');
+ul.innerHTML = "<li id='btnCal' class='active'><a href=#>Inicio</a></li><li id='btnUsu'><a  href='#' >Usuarios</a></li><li><a href='../index.html'>Cerrar sesion</a></li>";
 escuchadoresDeEventos();
 
 

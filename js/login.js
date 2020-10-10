@@ -117,7 +117,7 @@ function comprobar() {
     var nmUsu = document.getElementById('nm').value.toLowerCase();
     var pwUsu = document.getElementById('pw').value;
     let u = arrayU.find(u => u.nm == nmUsu && u.pw == pwUsu)
-    if (u == undefined) {
+    if (u === undefined) {
         alert('Usuario y/o contraseña incorrecto');
     } else {
         document.getElementById('nm').value = "";
@@ -191,7 +191,6 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('boxForm');
-    let diaHoy = new Date();
     divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly></textarea></div>"
 
 
