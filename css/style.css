@@ -129,7 +129,7 @@ textarea {
   border-bottom: 1px solid gray;
 }
 
-#addEvent {
+#addEvent,#addUser {
   background-color: #d3e8ff;
   border: 1px solid black;
 }
@@ -282,7 +282,7 @@ textarea:focus {
   }
 
   /*Añadir eventos*/
-  #addEvent {
+  #addEvent, #addUser {
     width: 90%;
     min-height: 140px;
     margin-top: 5%;
@@ -335,7 +335,7 @@ textarea:focus {
     display: none;
   }
 
-  #eventColumn {
+  #boxForm {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -408,7 +408,7 @@ textarea:focus {
   }
 
   /*Añadir eventos*/
-  #addEvent {
+  #addEvent, #addUser {
     background-color: pink;
     width: 90%;
     min-height: 140px;
@@ -467,7 +467,7 @@ textarea:focus {
     margin-top: 1%;
   }
 
-  #eventColumn {
+  #boxForm {
     display: flex;
     flex-direction: column;
     width: 50%;
