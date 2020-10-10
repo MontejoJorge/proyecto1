@@ -168,13 +168,13 @@ function mostrarUsu() {
 
 
     let div = document.getElementById('eventInfo');
-    let primero = "<div id='eventHistory'><p class='eventDate'>Usuario</p><p class='eventName'>Opciones</p></div>"
+    let primero = "<div id='eventHistory'><p class='userName'>Usuario</p><p class='userOp'>Opciones</p></div>"
 
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
     let forma = "";
     for (x = 0; x < arrayU.length; x++) {
-        forma = forma + "<div class='event'><p class='eventDate'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-trash-alt'  onclick='eliminarUsu(this.id)'></div>"
+        forma = forma + "<div class='event'><p class='userName'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-trash-alt'  onclick='eliminarUsu(this.id)'></div>"
 
     }
 
