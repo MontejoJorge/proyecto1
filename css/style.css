@@ -357,8 +357,8 @@ textarea:focus {
 }
 
 @media (min-width: 768px) {
-  #menu #menuList li {
-    height: 20%;
+  body{
+    height: 100%;
   }
   article {
     flex-direction: row;
@@ -366,13 +366,12 @@ textarea:focus {
   }
 
   #eventInfo {
-    background-color: pink;
     height: 70%;
     min-height: 135px;
     margin: 2%;
     border-radius: 5px;
     overflow: auto;
-    width: 50%;
+    width: 100%;
   }
 
   #menu {
@@ -380,7 +379,6 @@ textarea:focus {
   }
 
   #eventHistory {
-    background-color: brown;
     width: 100%;
     height: 45px;
     border-radius: 5px 5px 0 0;
@@ -398,9 +396,8 @@ textarea:focus {
   .event {
     width: 100%;
     height: 45px;
-    background-color: chartreuse;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid lightgray;
   }
@@ -415,7 +412,6 @@ textarea:focus {
 
   /*Añadir eventos*/
   #addEvent, #addUser {
-    background-color: pink;
     width: 90%;
     min-height: 140px;
     margin-bottom: 3%;
@@ -423,6 +419,7 @@ textarea:focus {
     display: flex;
     flex-wrap: wrap;
     height: -webkit-fill-available;
+
   }
 
   #datePicker {
@@ -468,34 +465,81 @@ textarea:focus {
 
   #addButton {
     width: 90%;
-    margin: 0 5% 5% 5%;
-    height: 30px;
-    margin-top: 1%;
+    margin: 1% 5% 5% 5%;
+    height: 40px;
+    font-size: 16px;
   }
-
+  #addUser{
+    font-size: 16px;
+  }
   #boxForm {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     align-items: center;
     height: 70%;
     margin: 2%;
   }
 
   #eventDescription {
-    width: 90%;
-    background-color: pink;
+    background-color: #d3e8ff;
     border-radius: 5px 5px 5px 5px;
-    margin-top: 6%;
+    padding: 0% 3%;
+    border: 1px solid black;
   }
 
   #textDescription {
-    width: 90%;
+    width: 40vw;
     margin-top: 4%;
     margin-bottom: 4%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 10vh;
+    border-radius: 5px 5px 5px 5px;
   }
+  form{
+    width: 100%;
+  }
+  #menu #menuList{
+    display: flex;
+    flex-direction: row;
+    background-color: #304d6d;
+  }
+
+  #menu #menuList li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 60px;
+    padding: 0px 22px;
+
+  }
+  .event .eventName,.event .eventUser, .event button{
+    width: 18%;
+  }
+  .event .eventUser{
+    padding-left: 9%;
+  }
+  .event .eventName{
+    padding-left: 4%;
+  }
+  .event .fa-trash-alt{
+    padding-left: 2%;
+  }
+  .event .userName {
+    padding: 5%
+  }
+  .event button{
+    background: none;
+    border: none;
+    font-size: 20px;
+  }
+  footer li a{
+    color: white;
+    text-decoration: none;
+  }
+/* HOVER MENU Y BOTONES*/
+
 }
