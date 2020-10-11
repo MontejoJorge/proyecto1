@@ -1,5 +1,6 @@
 // Zona de creación de objetos de prueba
 // Usuario admin que siempre exista para loggear
+
 var admin = {nm: 'admin', pw: 'Jm12345'};
 
 var arrayU = JSON.parse(localStorage.getItem('arrayU'));
@@ -110,7 +111,7 @@ function registro() {
 }
 
 function comprobar() {
-    //Este metodo se encaga de comprobar de que el usuario loggeado existe y de
+    //Este metodo se encarga de comprobar de que el usuario loggeado existe y de
     // la variable del nombre de usuario para saber que está loggeado
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
@@ -136,6 +137,7 @@ function addEvent() {
     if (document.getElementById('datePicker').value === "" || document.getElementById('addEventName').value === "") {
         alert("No se puede dejar vacio el titulo ni la fecha.")
     } else {
+            //Constructor de Eventos
         let ev = {
             fecha: document.getElementById('datePicker').value,
             cita: document.getElementById('addEventName').value,
@@ -191,7 +193,7 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('boxForm');
-    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly></textarea></div>"
+    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly>Aqui aparecera la descripcion del evento...</textarea></div>"
 
 
     let div = document.getElementById('eventInfo');
@@ -230,7 +232,8 @@ function mostrarEventos() {
 // del array.
 function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
-
+    //Esta condición se encarga de comprobar de que el usuario que se elimina no sea el que esta logueado, en caso de
+    //que sea, se deslogueara
     if(arrayU[id].nm === localStorage.getItem('usu')){
         localStorage.removeItem('usu');
         arrayU.splice(id, 1);
