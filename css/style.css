@@ -154,11 +154,9 @@ textarea {
   border-bottom: 2px #4ea5ff solid;
   transition: .1s;
 }
-
-
-
 input:focus,
-textarea:focus {
+textarea:focus,
+button:focus {
   outline: none;
 }
 
