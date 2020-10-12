@@ -375,7 +375,12 @@ button:focus {
   #menu {
     position: fixed;
   }
-
+  #menu {
+    justify-content: space-between;
+  }
+  #uName {
+    padding-right: 20px;
+   }
   #eventHistory {
     width: 100%;
     height: 45px;
@@ -485,7 +490,9 @@ button:focus {
     padding: 0% 3%;
     border: 1px solid black;
   }
-
+  textarea {
+    padding: 5px;
+  }
   #textDescription {
     width: 40vw;
     margin-top: 4%;
@@ -537,6 +544,10 @@ button:focus {
   footer li a{
     color: white;
     text-decoration: none;
+    padding: 0 15px;
+  }
+  footer li a:hover {
+    text-decoration: underline;
   }
 /* HOVER MENU Y BOTONES*/
 

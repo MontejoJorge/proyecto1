@@ -166,7 +166,7 @@ function mostrarUsu() {
     //sesión y de mostrarlos por pantalla añadiendo un elemento HTML
     let divU = document.getElementById('boxForm');
 
-    divU.innerHTML = "<div id='addUser'> <p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre del usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'></div>"
+    divU.innerHTML = "<div id='addUser'> <p class='title'>A&ntilde;adir usuario</p><input type='text' id='nm' placeholder='Nombre de usuario'><input type='password' id='pw' placeholder='Contrase&ntilde;a'><input type='button' id='btnAddUsu' value='A&ntilde;adir' onclick='registro()'></div>"
 
 
     let div = document.getElementById('eventInfo');
@@ -193,7 +193,7 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('boxForm');
-    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly>Aqui aparecera la descripcion del evento...</textarea></div>"
+    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Nombre del evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly>Aqui aparecera la descripcion del evento...</textarea></div>"
 
 
     let div = document.getElementById('eventInfo');
