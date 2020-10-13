@@ -558,6 +558,8 @@ button:focus {
     border-color: #007DFF;
     transition: .3s;
   }
-
+  .event:hover{
+    background-color: #A2B9C8;
+  }
 
 }
