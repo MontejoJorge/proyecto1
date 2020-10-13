@@ -174,6 +174,14 @@ function mostrarUsu() {
 
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
 
+    //Funcion para ordenar el array alfabeticamente
+    arrayU.sort(function(a, b){
+        if(a.nm < b.nm) { return -1; }
+        if(a.nm > b.nm) { return 1; }
+        return 0;
+    })
+
+
     let forma = "";
     for (x = 0; x < arrayU.length; x++) {
         forma = forma + "<div class='event'><p class='userName'>" + arrayU[x].nm + "</p> <button id='" + x + "' class='fas fa-trash-alt'  onclick='eliminarUsu(this.id)'></div>"
@@ -234,14 +242,19 @@ function eliminarUsu(id) {
     let arrayU = JSON.parse(localStorage.getItem('arrayU'));
     //Esta condición se encarga de comprobar de que el usuario que se elimina no sea el que esta logueado, en caso de
     //que sea, se deslogueara
+    if(arrayU[id].nm === "admin"){
+        alert("El administrador no puede ser eliminado")
+    }else{
     if(arrayU[id].nm === localStorage.getItem('usu')){
         localStorage.removeItem('usu');
         arrayU.splice(id, 1);
         localStorage.setItem('arrayU', JSON.stringify(arrayU));
         alert("El usuario con el que estabas loggeado ha sido eliminado")
         userLog();
+    }else
+        arrayU.splice(id, 1);
     }
-    arrayU.splice(id, 1);
+
     localStorage.setItem('arrayU', JSON.stringify(arrayU));
     mostrarUsu();
 
