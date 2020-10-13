@@ -322,6 +322,7 @@ button:focus {
   #addButton,
   #btnAddUsu {
     width: 90%;
+    border-radius: 5px 5px 5px 5px;
     margin: 0 5% 5% 5%;
     height: 40px;
   }
@@ -445,11 +446,12 @@ button:focus {
     width: 40%;
     height: 40px;
   }
-
+  #addButton,
   #btnAddUsu {
     width: 90%;
     margin: 0 5% 5% 5%;
     height: 40px;
+    border-radius: 5px 5px 5px 5px;
   }
 
   #addEventName {
@@ -550,5 +552,12 @@ button:focus {
     text-decoration: underline;
   }
 /* HOVER MENU Y BOTONES*/
+  #addButton:hover,
+  #btnAddUsu:hover{
+    background-color: white;
+    border-color: #007DFF;
+    transition: .3s;
+  }
+
 
 }
