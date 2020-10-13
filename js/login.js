@@ -27,7 +27,6 @@ function crearDatos() {
     localStorage.removeItem('usu');
 
     //Array de eventos y usuarios con su correspondiente push a local storage
-    console.log(JSON.parse(localStorage.getItem('arrayU')));
 
 
     console.log(arrayE);
@@ -36,14 +35,11 @@ function crearDatos() {
         arrayU = [];
         arrayU.push(admin);
         localStorage.setItem('arrayU', JSON.stringify(arrayU));
-        console.log(JSON.parse(localStorage.getItem('arrayU')));
-
     }
 
     if (arrayE == null) {
         arrayE = []
         localStorage.setItem('arrayE', JSON.stringify(arrayE));
-        console.log(JSON.parse(localStorage.getItem('arrayE')));
     }
 
 }
