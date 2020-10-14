@@ -29,7 +29,7 @@ function crearDatos() {
     //Array de eventos y usuarios con su correspondiente push a local storage
 
 
-    console.log(arrayE);
+
 
     if (arrayU == null) {
         arrayU = [];
@@ -81,7 +81,7 @@ function registro() {
 
                 document.getElementById('nm').value = "";
                 document.getElementById('pw').value = "";
-                mostrarUsu()
+                mostrarUsu();
 
             } else
                 alert("Error, ese usuario ya existe")
