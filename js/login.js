@@ -84,7 +84,10 @@ function registro() {
                 mostrarUsu();
 
             } else
-                alert("Error, ese usuario ya existe")
+                alert("Error, ese usuario ya existe");
+                document.getElementById('nm').value = "";
+                document.getElementById('pw').value = "";
+
         }
             else {
                 alert('La contraseña solo puede contener numeros o letras');
