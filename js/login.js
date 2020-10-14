@@ -49,10 +49,6 @@ function crearDatos() {
 //al hacer enter se haga click el boton de login
 
 
-//LLamada a dos funciones para que cada vez que se carge la página salgan los
-//eventos y los usuarios recargados
-mostrarUsu();
-mostrarEventos();
 
 //----------------------------------------------------------
 
@@ -200,12 +196,12 @@ function mostrarEventos() {
     //y de mostrarlos por pantalla
 
     let divE = document.getElementById('boxForm');
-    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir evento</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Nombre del evento'> <textarea type='text' placeholder='Añade una descripcion al evento' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly>Aqui aparecera la descripcion del evento...</textarea></div>"
+    divE.innerHTML = "<div id='addEvent'> <p class='title'>A&ntilde;adir aviso</p><input type='date' name='date' id='datePicker'><input type='text' name='eventName' id='addEventName' placeholder='Nombre del aviso'> <textarea type='text' placeholder='Añade una descripcion al aviso' name='descripcion' id='addEventDescription'></textarea><input type='button' value='Añadir' id='addButton' onclick='addEvent()'></div> <div id='eventDescription'><textarea name='eventDescription' id='textDescription' readonly>Aqui aparecera la descripcion del evento...</textarea></div>"
 
 
     let div = document.getElementById('eventInfo');
 
-    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventUs'>Usuario</p><p class='eventName'>Evento</p><p class='eventDesc'>Descripcion</p><p class='eventOp'>Opciones</p></div>"
+    let primero = "<div id='eventHistory'><p class='eventDate'>Fecha</p><p class='eventUs'>Usuario</p><p class='eventName'>Aviso</p><p class='eventDesc'>Descripcion</p><p class='eventOp'>Opciones</p></div>"
 
     let arrayE = JSON.parse(localStorage.getItem('arrayE'));
 
